@@ -28,7 +28,7 @@ public class GCMPoster {
         DataOutputStream wr = new DataOutputStream(conn.getOutputStream());
 
         //add json data into post request body
-        mapper.writeValue(wr, message);
+        //mapper.writeValue(wr, message);
 
         //send and close
         wr.flush();

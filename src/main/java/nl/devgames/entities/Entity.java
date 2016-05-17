@@ -1,6 +1,5 @@
 package nl.devgames.entities;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import org.neo4j.ogm.annotation.GraphId;
 
 /**

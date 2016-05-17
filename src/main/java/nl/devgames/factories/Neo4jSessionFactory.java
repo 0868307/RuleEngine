@@ -4,6 +4,8 @@ import org.neo4j.ogm.service.Components;
 import org.neo4j.ogm.session.Session;
 import org.neo4j.ogm.session.SessionFactory;
 
+import java.net.URLEncoder;
+
 public class Neo4jSessionFactory {
 
         private final static SessionFactory sessionFactory = new SessionFactory("nl.devgames.entities");
@@ -17,7 +19,7 @@ public class Neo4jSessionFactory {
                 Components.configuration()
                         .driverConfiguration()
                         .setDriverClassName("org.neo4j.ogm.drivers.embedded.driver.EmbeddedDriver")
-                        .setURI("file:/database");
+                        .setURI("file:///etc/ruleengine/database");
         }
 
         public Session getNeo4jSession() {
