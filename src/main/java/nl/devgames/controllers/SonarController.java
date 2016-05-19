@@ -7,6 +7,8 @@ import nl.devgames.entities.Project;
 import nl.devgames.entities.User;
 import nl.devgames.services.CommitServiceImpl;
 import nl.devgames.services.UserServiceImpl;
+import org.neo4j.ogm.json.JSONException;
+import org.neo4j.ogm.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.*;
