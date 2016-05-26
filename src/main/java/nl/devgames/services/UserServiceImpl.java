@@ -21,6 +21,15 @@ public class UserServiceImpl extends GenericService<User> implements UserService
 
     @Override
     public boolean validateUser(String username, String password) {
+        User user = null;
+        Iterator iterator = Neo4jSessionFactory.getInstance().getNeo4jSession().loadAll(User.class, new Filter("username", username)).iterator();
+        while(iterator.hasNext()){
+            user = (User) iterator.next();
+            break;
+        }
+        if(user != null && user.getPassword().equals(password)){
+            return true;
+        }
         return false;
     }
 
@@ -42,5 +51,38 @@ public class UserServiceImpl extends GenericService<User> implements UserService
     @Override
     public Set<Commit> findAllCommitsOfUser(User user) {
         return null;
+    }
+
+    @Override
+    public User findUserByUsername(String username) {
+        User user = null;
+        Iterator iterator = Neo4jSessionFactory.getInstance().getNeo4jSession().loadAll(User.class, new Filter("username", username)).iterator();
+        while(iterator.hasNext()){
+            user = (User) iterator.next();
+            break;
+        }
+        return user;
+    }
+
+    @Override
+    public User findUserByGithubname(String githubname) {
+        User user = null;
+        Iterator iterator = Neo4jSessionFactory.getInstance().getNeo4jSession().loadAll(User.class, new Filter("githubUsername", githubname)).iterator();
+        while(iterator.hasNext()){
+            user = (User) iterator.next();
+            break;
+        }
+        return user;
+    }
+
+    @Override
+    public Set<User> getAllUsers() {
+        Iterator iterator = findAll().iterator();
+        Set<User> users = new HashSet<>();
+        while(iterator.hasNext()){
+            User user = (User) iterator.next();
+            users.add(user);
+        }
+        return users;
     }
 }

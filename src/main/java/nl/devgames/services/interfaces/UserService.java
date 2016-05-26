@@ -15,5 +15,7 @@ public interface UserService {
 
     public Set<Project> findAllProjectsOfUser(Long id);
     public Set<Commit> findAllCommitsOfUser(User user);
-
+    public User findUserByUsername(String username);
+    public User findUserByGithubname(String githubname);
+    public Set<User> getAllUsers();
 }

@@ -25,7 +25,7 @@
         <module name="gs-rest-service" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
+    <bytecodeTargetLevel target="1.8">
       <module name="gs-rest-service" target="1.8" />
     </bytecodeTargetLevel>
   </component>

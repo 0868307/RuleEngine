@@ -1,7 +1,10 @@
 package nl.devgames.services;
 
 import nl.devgames.entities.Project;
+import nl.devgames.entities.User;
 import nl.devgames.services.interfaces.ProjectService;
+
+import java.util.Set;
 
 /**
  * Created by Wouter on 3/5/2016.
@@ -10,5 +13,10 @@ public class ProjectServiceImpl extends GenericService<Project> implements Proje
     @Override
     public Class<Project> getEntityType() {
         return Project.class;
+    }
+
+    @Override
+    public Set<User> getUsersOfProject(String project) {
+        return null;
     }
 }

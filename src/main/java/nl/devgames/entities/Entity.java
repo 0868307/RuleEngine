@@ -5,6 +5,7 @@ import org.neo4j.ogm.annotation.GraphId;
 /**
  * Created by Wouter on 3/5/2016.
  */
+
 public abstract class Entity {
     @GraphId
     Long id;

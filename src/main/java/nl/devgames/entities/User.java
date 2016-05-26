@@ -16,6 +16,7 @@ public class User extends Entity {
     private String username;
     private String githubUsername;
     private long points;
+    private String password;
 
     public User() {
     }
@@ -47,4 +48,11 @@ public class User extends Entity {
         this.points = points;
     }
 
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getPassword() {
+        return password;
+    }
 }
