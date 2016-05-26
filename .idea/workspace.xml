@@ -2,64 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="53d5e522-7c81-4790-969b-b426e692f986" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/nl/devgames/security/AuthToken.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/nl/devgames/entities/Ranking.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/nl/devgames/controllers/RankingController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/nl/devgames/security/SecurityFilter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/nl/devgames/handlers/SonarReportHandler.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/application.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/spring-config.xml" />
-      <change type="DELETED" beforePath="C:\Users\Wouter\Documents\GitHub\RuleEngine\RuleEngine\.idea\libraries\Maven__org_apache_httpcomponents_httpclient_4_5_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Wouter\Documents\GitHub\RuleEngine\RuleEngine\.idea\libraries\Maven__org_apache_httpcomponents_httpcore_4_4_4.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Wouter\Documents\GitHub\RuleEngine\RuleEngine\.idea\libraries\Maven__org_neo4j_neo4j_2_3_2.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Wouter\Documents\GitHub\RuleEngine\RuleEngine\.idea\libraries\Maven__org_neo4j_neo4j_codegen_2_3_2.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Wouter\Documents\GitHub\RuleEngine\RuleEngine\.idea\libraries\Maven__org_neo4j_neo4j_consistency_check_2_3_2.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Wouter\Documents\GitHub\RuleEngine\RuleEngine\.idea\libraries\Maven__org_neo4j_neo4j_consistency_check_legacy_2_3_2.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Wouter\Documents\GitHub\RuleEngine\RuleEngine\.idea\libraries\Maven__org_neo4j_neo4j_csv_2_3_2.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Wouter\Documents\GitHub\RuleEngine\RuleEngine\.idea\libraries\Maven__org_neo4j_neo4j_cypher_2_3_2.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Wouter\Documents\GitHub\RuleEngine\RuleEngine\.idea\libraries\Maven__org_neo4j_neo4j_cypher_compiler_2_3_2_3_2.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Wouter\Documents\GitHub\RuleEngine\RuleEngine\.idea\libraries\Maven__org_neo4j_neo4j_cypher_frontend_2_3_2_3_2.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Wouter\Documents\GitHub\RuleEngine\RuleEngine\.idea\libraries\Maven__org_neo4j_neo4j_function_2_3_2.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Wouter\Documents\GitHub\RuleEngine\RuleEngine\.idea\libraries\Maven__org_neo4j_neo4j_graph_algo_2_3_2.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Wouter\Documents\GitHub\RuleEngine\RuleEngine\.idea\libraries\Maven__org_neo4j_neo4j_graph_matching_2_3_2.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Wouter\Documents\GitHub\RuleEngine\RuleEngine\.idea\libraries\Maven__org_neo4j_neo4j_io_2_3_2.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Wouter\Documents\GitHub\RuleEngine\RuleEngine\.idea\libraries\Maven__org_neo4j_neo4j_jmx_2_3_2.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Wouter\Documents\GitHub\RuleEngine\RuleEngine\.idea\libraries\Maven__org_neo4j_neo4j_kernel_2_3_2.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Wouter\Documents\GitHub\RuleEngine\RuleEngine\.idea\libraries\Maven__org_neo4j_neo4j_logging_2_3_2.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Wouter\Documents\GitHub\RuleEngine\RuleEngine\.idea\libraries\Maven__org_neo4j_neo4j_lucene_index_2_3_2.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Wouter\Documents\GitHub\RuleEngine\RuleEngine\.idea\libraries\Maven__org_neo4j_neo4j_ogm_api_2_0_0_M03.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Wouter\Documents\GitHub\RuleEngine\RuleEngine\.idea\libraries\Maven__org_neo4j_neo4j_ogm_compiler_2_0_0_M03.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Wouter\Documents\GitHub\RuleEngine\RuleEngine\.idea\libraries\Maven__org_neo4j_neo4j_ogm_core_2_0_0_M03.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Wouter\Documents\GitHub\RuleEngine\RuleEngine\.idea\libraries\Maven__org_neo4j_neo4j_ogm_embedded_driver_2_0_0_M03.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Wouter\Documents\GitHub\RuleEngine\RuleEngine\.idea\libraries\Maven__org_neo4j_neo4j_ogm_http_driver_2_0_0_M03.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Wouter\Documents\GitHub\RuleEngine\RuleEngine\.idea\libraries\Maven__org_neo4j_neo4j_primitive_collections_2_3_2.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Wouter\Documents\GitHub\RuleEngine\RuleEngine\.idea\libraries\Maven__org_neo4j_neo4j_udc_2_3_2.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Wouter\Documents\GitHub\RuleEngine\RuleEngine\.idea\libraries\Maven__org_neo4j_neo4j_unsafe_2_3_2.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Wouter\Documents\GitHub\RuleEngine\RuleEngine\application.properties" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Wouter\Documents\GitHub\RuleEngine\RuleEngine\out\production\main\spring-config.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Wouter\Documents\GitHub\RuleEngine\RuleEngine\src\main\java\application.properties" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Wouter\Documents\GitHub\RuleEngine\RuleEngine\src\main\java\nl\devgames\controllers\CommitController.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Wouter\Documents\GitHub\RuleEngine\RuleEngine\src\main\java\nl\devgames\entities\SonarReport.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Wouter\Documents\GitHub\RuleEngine\RuleEngine\src\main\java\spring-config.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Wouter\Documents\GitHub\RuleEngine\RuleEngine\target\MANIFEST.MF" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ruleengine-0.1.0.jar.original" afterPath="$PROJECT_DIR$/target/ruleengine-0.1.0.jar.original" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/nl/devgames/controllers/AuthController.java" afterPath="$PROJECT_DIR$/src/main/java/nl/devgames/controllers/AuthController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/nl/devgames/entities/Entity.java" afterPath="$PROJECT_DIR$/src/main/java/nl/devgames/entities/Entity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/nl/devgames/factories/Neo4jSessionFactory.java" afterPath="$PROJECT_DIR$/src/main/java/nl/devgames/factories/Neo4jSessionFactory.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/nl/devgames/services/interfaces/ProjectService.java" afterPath="$PROJECT_DIR$/src/main/java/nl/devgames/services/interfaces/ProjectService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/nl/devgames/services/ProjectServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/nl/devgames/services/ProjectServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/nl/devgames/controllers/SonarController.java" afterPath="$PROJECT_DIR$/src/main/java/nl/devgames/controllers/SonarController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/nl/devgames/entities/User.java" afterPath="$PROJECT_DIR$/src/main/java/nl/devgames/entities/User.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/nl/devgames/services/interfaces/UserService.java" afterPath="$PROJECT_DIR$/src/main/java/nl/devgames/services/interfaces/UserService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/nl/devgames/services/UserServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/nl/devgames/services/UserServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gs-rest-service.iml" afterPath="$PROJECT_DIR$/gs-rest-service.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/main.iml" afterPath="$PROJECT_DIR$/src/main/main.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/nl/devgames/controllers/RankingController.java" afterPath="$PROJECT_DIR$/src/main/java/nl/devgames/controllers/RankingController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="gs-rest-service.iws" />
@@ -86,47 +29,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="UserService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/nl/devgames/services/interfaces/UserService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="374">
-              <caret line="19" column="35" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="35" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ProjectService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/nl/devgames/services/interfaces/ProjectService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="306">
-              <caret line="10" column="14" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="AuthController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/nl/devgames/controllers/AuthController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="544">
               <caret line="24" column="25" selection-start-line="24" selection-start-column="25" selection-end-line="24" selection-end-column="25" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ProjectServiceImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/nl/devgames/services/ProjectServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="374">
-              <caret line="18" column="41" selection-start-line="18" selection-start-column="41" selection-end-line="18" selection-end-column="41" />
-              <folding>
-                <element signature="e#479#480#0" expanded="true" />
-                <element signature="e#506#507#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -164,12 +72,56 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Neo4jSessionFactory.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Neo4jSessionFactory.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/nl/devgames/factories/Neo4jSessionFactory.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.45617172" vertical-offset="0" max-vertical-offset="559">
-              <caret line="21" column="24" selection-start-line="21" selection-start-column="24" selection-end-line="21" selection-end-column="24" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="442">
+              <caret line="21" column="44" selection-start-line="21" selection-start-column="44" selection-end-line="21" selection-end-column="44" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Ranking.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/nl/devgames/entities/Ranking.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
+              <caret line="14" column="33" selection-start-line="14" selection-start-column="33" selection-end-line="14" selection-end-column="33" />
+              <folding>
+                <element signature="e#337#338#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Project.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/nl/devgames/entities/Project.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="7" max-vertical-offset="833">
+              <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Issue.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/nl/devgames/entities/Issue.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="391">
+              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RankingController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/nl/devgames/controllers/RankingController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.53496504" vertical-offset="153" max-vertical-offset="748">
+              <caret line="27" column="52" selection-start-line="27" selection-start-column="52" selection-end-line="27" selection-end-column="52" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -185,16 +137,6 @@
                 <element signature="e#772#773#0" expanded="true" />
                 <element signature="e#822#823#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserServiceImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/nl/devgames/services/UserServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="835" max-vertical-offset="1394">
-              <caret line="86" column="5" selection-start-line="86" selection-start-column="5" selection-end-line="86" selection-end-column="5" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -234,7 +176,6 @@
         <option value="$PROJECT_DIR$/src/main/java/nl/devgames/handlers/SonarReportHandler.java" />
         <option value="$PROJECT_DIR$/src/main/java/nl/devgames/entities/Entity.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/nl/devgames/controllers/RankingController.java" />
         <option value="$PROJECT_DIR$/src/main/java/nl/devgames/entities/Ranking.java" />
         <option value="$PROJECT_DIR$/src/main/java/nl/devgames/services/UserServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/nl/devgames/services/interfaces/UserService.java" />
@@ -244,6 +185,7 @@
         <option value="$PROJECT_DIR$/src/main/java/nl/devgames/security/SecurityFilter.java" />
         <option value="$PROJECT_DIR$/src/main/java/nl/devgames/controllers/AuthController.java" />
         <option value="$PROJECT_DIR$/src/main/java/nl/devgames/factories/Neo4jSessionFactory.java" />
+        <option value="$PROJECT_DIR$/src/main/java/nl/devgames/controllers/RankingController.java" />
       </list>
     </option>
   </component>
@@ -1051,12 +993,19 @@
       <workItem from="1463047039155" duration="1679000" />
       <workItem from="1463051353841" duration="12704000" />
       <workItem from="1463654019059" duration="8809000" />
-      <workItem from="1464199303390" duration="13637000" />
+      <workItem from="1464199303390" duration="13834000" />
     </task>
+    <task id="LOCAL-00001" summary="Ranking en Authtoken">
+      <created>1464223788769</created>
+      <option name="number" value="00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1464223788769</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="60058000" />
+    <option name="totallyTimeSpent" value="60255000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1040" extended-state="0" />
@@ -1108,6 +1057,8 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
+    <MESSAGE value="Ranking en Authtoken" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ranking en Authtoken" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1133,13 +1084,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/nl/devgames/entities/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="850">
-          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/nl/devgames/factories/Neo4jSessionFactory.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="425">
@@ -1324,14 +1268,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/nl/devgames/entities/Project.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="7" max-vertical-offset="833">
-          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/spring-config.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-3.4" vertical-offset="0" max-vertical-offset="187">
@@ -1437,32 +1373,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/nl/devgames/controllers/RankingController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="748">
-          <caret line="27" column="25" selection-start-line="27" selection-start-column="25" selection-end-line="27" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/nl/devgames/entities/Ranking.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="612">
-          <caret line="14" column="33" selection-start-line="14" selection-start-column="33" selection-end-line="14" selection-end-column="33" />
-          <folding>
-            <element signature="e#337#338#0" expanded="true" />
-            <element signature="e#385#386#0" expanded="true" />
-            <element signature="e#425#426#0" expanded="true" />
-            <element signature="e#456#457#0" expanded="true" />
-            <element signature="e#485#486#0" expanded="true" />
-            <element signature="e#527#528#0" expanded="true" />
-            <element signature="e#563#564#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/nl/devgames/services/UserServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="835" max-vertical-offset="1394">
@@ -1550,9 +1460,45 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/nl/devgames/factories/Neo4jSessionFactory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.45617172" vertical-offset="0" max-vertical-offset="559">
-          <caret line="21" column="24" selection-start-line="21" selection-start-column="24" selection-end-line="21" selection-end-column="24" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="442">
+          <caret line="21" column="44" selection-start-line="21" selection-start-column="44" selection-end-line="21" selection-end-column="44" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/nl/devgames/entities/Ranking.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="612">
+          <caret line="14" column="33" selection-start-line="14" selection-start-column="33" selection-end-line="14" selection-end-column="33" />
+          <folding>
+            <element signature="e#337#338#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/nl/devgames/entities/Project.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="7" max-vertical-offset="833">
+          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/nl/devgames/entities/Issue.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="391">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/nl/devgames/controllers/RankingController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.53496504" vertical-offset="153" max-vertical-offset="748">
+          <caret line="27" column="52" selection-start-line="27" selection-start-column="52" selection-end-line="27" selection-end-column="52" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

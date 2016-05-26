@@ -25,7 +25,7 @@ public class RankingController {
 
     private static final Logger logger = LoggerFactory.getLogger(Application.class);
     @RequestMapping(value = "/ranking",method = RequestMethod.GET)
-    public @ResponseBody List<Ranking> saveSonarInfo(){
+    public @ResponseBody List<Ranking> getRankingAll(){
         UserService userService = new UserServiceImpl();
         Set<User> allUsers = userService.getAllUsers();
         List<Ranking> rankingList = new ArrayList<>();
