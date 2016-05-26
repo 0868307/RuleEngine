@@ -40,7 +40,8 @@ public class SonarReportHandler {
         long points = 0;
         for (int issueIndex = 0; issueIndex < issues.length(); issueIndex++) {
             JSONObject issue = issues.getJSONObject(issueIndex);
-            if(issue.getString("status").equals(ISSUE_STATUS_CLOSED)){
+                //TODO FIX ALGORITHM OPEN STATUS > CLOSED
+            if(issue.getString("status").equals(ISSUE_STATUS_OPEN)){
                 String severity = issue.getString("severity");
                 if(severity.equals(ISSUE_LEVEL_MINOR)){
                     points += 1;
