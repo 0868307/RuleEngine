@@ -16,8 +16,7 @@ public class AuthController {
     public String login(@RequestParam(value="username") String username,@RequestParam(value="password") String password) {
         UserServiceImpl userService = new UserServiceImpl();
         if(userService.validateUser(username,password)){
-            String token = AuthToken.generate(username);
-            return token;
+            return AuthToken.generate(username);
         }else{
             throw new SecurityException("Incorrect login info");
         }
