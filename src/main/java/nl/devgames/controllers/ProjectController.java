@@ -17,8 +17,7 @@ public class ProjectController {
     @RequestMapping(value = "/projects/{uuid}",method = RequestMethod.GET)
     public Project getProjectById(@PathVariable Long uuid) {
         ProjectServiceImpl projectService = new ProjectServiceImpl();
-        Project project = projectService.find(uuid);
-        return project;
+        return projectService.find(uuid);
     }
     @RequestMapping(value = "/projects",method = RequestMethod.POST)
     public Project createNewProject(@RequestBody Project project) {
