@@ -23,7 +23,6 @@ public class SonarReportHandler {
     private static final String ISSUE_SEVERITY = "severity";
     private static final String ISSUE_STATUS = "status";
 
-
     public SonarReportHandler() {
     }
 
@@ -43,19 +42,21 @@ public class SonarReportHandler {
         long points = 0;
         for (int issueIndex = 0; issueIndex < issues.length(); issueIndex++) {
             JSONObject issue = issues.getJSONObject(issueIndex);
+            String severity = issue.getString(ISSUE_SEVERITY);
+            long tempPoints = 0;
+            if(severity.equals(ISSUE_LEVEL_MINOR)){
+                tempPoints += 1;
+            }else if(severity.equals(ISSUE_LEVEL_MAJOR)){
+                tempPoints += 5;
+            }else if(severity.equals(ISSUE_LEVEL_CRITICAL)){
+                tempPoints += 10;
+            }
             if(issue.getString(ISSUE_STATUS).equals(ISSUE_STATUS_CLOSED)){
+                points += tempPoints;
 
-                String severity = issue.getString(ISSUE_SEVERITY);
-                if(severity.equals(ISSUE_LEVEL_MINOR)){
-                    points += 1;
-                }else if(severity.equals(ISSUE_LEVEL_MAJOR)){
-                    points += 5;
-                }else if(severity.equals(ISSUE_LEVEL_CRITICAL)){
-                    points += 10;
-                }
             }else{
                 if(Boolean.parseBoolean(issue.getString(ISSUE_IS_NEW))){
-
+                    points -= tempPoints;
                 }
             }
         }
