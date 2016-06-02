@@ -104,9 +104,11 @@
       <file leaf-file-name="RankingController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/nl/devgames/controllers/RankingController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.22857143" vertical-offset="0" max-vertical-offset="697">
-              <caret line="8" column="31" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
-              <folding />
+            <state vertical-scroll-proportion="0.45714286" vertical-offset="102" max-vertical-offset="697">
+              <caret line="22" column="6" selection-start-line="22" selection-start-column="6" selection-end-line="22" selection-end-column="6" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -1004,7 +1006,7 @@
       <workItem from="1464224550483" duration="354000" />
       <workItem from="1464262357410" duration="1125000" />
       <workItem from="1464821708369" duration="2796000" />
-      <workItem from="1464865328984" duration="4522000" />
+      <workItem from="1464865328984" duration="4775000" />
     </task>
     <task id="LOCAL-00001" summary="Ranking en Authtoken">
       <created>1464223788769</created>
@@ -1036,11 +1038,17 @@
       <option name="project" value="LOCAL" />
       <updated>1464869372402</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="unused imports">
+      <created>1464873350598</created>
+      <option name="number" value="00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1464873350598</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="69446000" />
+    <option name="totallyTimeSpent" value="69699000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1097,7 +1105,8 @@
     <MESSAGE value="Projecten worden automatisch gemaakt en Users kunnen herkent worden aan de hand van een authtoken" />
     <MESSAGE value="Major issues gefixed" />
     <MESSAGE value="kleine verandering als jenkins test" />
-    <option name="LAST_COMMIT_MESSAGE" value="kleine verandering als jenkins test" />
+    <MESSAGE value="unused imports" />
+    <option name="LAST_COMMIT_MESSAGE" value="unused imports" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1521,9 +1530,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/nl/devgames/controllers/RankingController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.22857143" vertical-offset="0" max-vertical-offset="697">
-          <caret line="8" column="31" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
-          <folding />
+        <state vertical-scroll-proportion="0.45714286" vertical-offset="102" max-vertical-offset="697">
+          <caret line="22" column="6" selection-start-line="22" selection-start-column="6" selection-end-line="22" selection-end-column="6" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
