@@ -1,5 +1,6 @@
 package nl.devgames.services.interfaces;
 
+import nl.devgames.entities.Project;
 import nl.devgames.entities.User;
 
 import java.util.Set;
@@ -9,4 +10,7 @@ import java.util.Set;
  */
 public interface ProjectService {
     public Set<User> getUsersOfProject(String project);
+
+    Project findProjectByProjectName(String projectName);
+    public void save(Project project);
 }

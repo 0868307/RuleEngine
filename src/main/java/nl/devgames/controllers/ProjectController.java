@@ -3,11 +3,15 @@ package nl.devgames.controllers;
 import nl.devgames.entities.Project;
 import nl.devgames.entities.User;
 import nl.devgames.entities.relationships.ProjectMember;
+import nl.devgames.security.AuthToken;
+import nl.devgames.security.SecurityFilter;
 import nl.devgames.services.ProjectServiceImpl;
 import nl.devgames.services.UserServiceImpl;
 import nl.devgames.services.interfaces.ProjectService;
 import nl.devgames.services.interfaces.UserService;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.Set;
 
 /**
  * Created by Wouter on 3/5/2016.
@@ -24,6 +28,13 @@ public class ProjectController {
         ProjectServiceImpl projectService = new ProjectServiceImpl();
         projectService.createOrUpdate(project);
         return project;
+    }
+    @RequestMapping(value = "/projects",method = RequestMethod.GET)
+    public Set<Project> getProjectsOfUser(@RequestHeader(SecurityFilter.AUTHTOKEN) String authToken) {
+        String username = AuthToken.getUsernameFromToken(authToken);
+        UserService userService = new UserServiceImpl();
+        User user = userService.findUserByUsername(username);
+        return userService.findAllProjectsOfUser(user.getId());
     }
     @RequestMapping(value = "/projects/addUser",method = RequestMethod.POST)
     public Project addUserToProject(@RequestBody ProjectMember projectMember) {

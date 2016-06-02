@@ -28,7 +28,7 @@ public class SonarController {
     @RequestMapping(value = "/sonar",method = RequestMethod.POST)
     public void saveSonarInfo(@RequestBody String jsonAsString) {
         try {
-            SonarReportHandler.processSonarReport(jsonAsString);
+             new SonarReportHandler().processSonarReport(jsonAsString);
         } catch (JSONException e) {
             e.printStackTrace();
         }

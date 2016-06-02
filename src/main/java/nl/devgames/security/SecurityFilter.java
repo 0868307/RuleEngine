@@ -16,14 +16,15 @@ public class SecurityFilter implements Filter {
                          FilterChain chain) throws IOException, ServletException {
 
         HttpServletResponse response = (HttpServletResponse) res;
-
         if(!authorize(response.getHeader(AUTHTOKEN))){
             throw new SecurityException("Invalid token");
         }
         chain.doFilter(req, res);
     }
     public boolean authorize(String token){
-        return AuthToken.checkToken(token);
+        //TODO enable auth
+        //return AuthToken.checkToken(token);
+        return true;
     }
     @Override
     public void destroy() {}

@@ -85,4 +85,9 @@ public class UserServiceImpl extends GenericService<User> implements UserService
         }
         return users;
     }
+
+    @Override
+    public void save(User user) {
+        createOrUpdate(user);
+    }
 }

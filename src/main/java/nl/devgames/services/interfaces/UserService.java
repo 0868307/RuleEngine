@@ -18,4 +18,6 @@ public interface UserService {
     public User findUserByUsername(String username);
     public User findUserByGithubname(String githubname);
     public Set<User> getAllUsers();
+
+    public void save(User user);
 }

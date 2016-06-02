@@ -12,6 +12,9 @@ import java.util.Map;
  * Created by Wouter on 5/19/2016.
  */
 public class AuthToken {
+    private AuthToken() {
+    }
+
     private static Map<String,String> tokenMap = new HashMap<>();
     public static String generate(String username){
         Key key = MacProvider.generateKey();

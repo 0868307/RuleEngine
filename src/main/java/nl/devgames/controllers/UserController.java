@@ -6,14 +6,17 @@ import java.util.concurrent.atomic.AtomicLong;
 
 import nl.devgames.entities.Project;
 import nl.devgames.entities.User;
+import nl.devgames.security.AuthToken;
+import nl.devgames.security.SecurityFilter;
 import nl.devgames.services.UserServiceImpl;
+import nl.devgames.services.interfaces.UserService;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class UserController {
     @RequestMapping("/whoami")
-    public User whoAmI(@RequestParam(value="name", defaultValue="World") String name) {
-        throw new UnsupportedOperationException("This will return the current logged in user");
+    public String whoAmI(@RequestHeader(SecurityFilter.AUTHTOKEN) String authToken) {
+        return AuthToken.getUsernameFromToken(authToken);
     }
     @RequestMapping(value = "/user/{uuid}",method = RequestMethod.GET)
     public User getUserById(@PathVariable Long uuid) {
@@ -21,7 +24,12 @@ public class UserController {
     }
     @RequestMapping(value = "/user/{uuid}",method = RequestMethod.PUT)
     public User updateUser(@PathVariable Long uuid,@RequestBody User user) {
-        throw new UnsupportedOperationException("this will update the user of uuid");
+        if(user.getId() == uuid){
+            UserService userService = new UserServiceImpl();
+            userService.save(user);
+            return user;
+        }
+        return null;
     }
     @RequestMapping(value = "/user",method = RequestMethod.POST)
     public User createNewUser(@RequestBody User user) {

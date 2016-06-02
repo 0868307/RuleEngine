@@ -14,9 +14,7 @@ import java.util.Set;
  */
 @NodeEntity
 public class Project extends Entity {
-    private String owner;
     private String name;
-    private String description;
 
     @Relationship(type = "PROJECT_MEMBER")
     Set<User> projectMembers;
@@ -28,28 +26,12 @@ public class Project extends Entity {
         super(id);
     }
 
-    public String getOwner() {
-        return owner;
-    }
-
-    public void setOwner(String owner) {
-        this.owner = owner;
-    }
-
     public String getName() {
         return name;
     }
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
     }
 
     public Set<User> getProjectMembers() {

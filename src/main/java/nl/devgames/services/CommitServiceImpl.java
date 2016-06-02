@@ -11,4 +11,9 @@ public class CommitServiceImpl extends GenericService<Commit> implements CommitS
     public Class<Commit> getEntityType() {
         return Commit.class;
     }
+
+    @Override
+    public void save(Commit commit) {
+        createOrUpdate(commit);
+    }
 }
