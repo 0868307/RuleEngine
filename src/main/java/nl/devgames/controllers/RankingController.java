@@ -1,11 +1,8 @@
 package nl.devgames.controllers;
 
-import com.google.gson.JsonArray;
-import com.google.gson.JsonObject;
 import nl.devgames.Application;
 import nl.devgames.entities.Ranking;
 import nl.devgames.entities.User;
-import nl.devgames.handlers.SonarReportHandler;
 import nl.devgames.services.UserServiceImpl;
 import nl.devgames.services.interfaces.UserService;
 import org.slf4j.Logger;
