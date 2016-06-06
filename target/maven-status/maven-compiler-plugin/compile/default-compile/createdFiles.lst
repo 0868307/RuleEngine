@@ -9,6 +9,7 @@ nl\devgames\services\UserServiceImpl.class
 nl\devgames\services\CommitServiceImpl.class
 nl\devgames\services\interfaces\CommitService.class
 nl\devgames\controllers\RankingController.class
+nl\devgames\services\AuthServiceImpl.class
 nl\devgames\entities\relationships\CommittedBy.class
 nl\devgames\factories\Neo4jSessionFactory.class
 nl\devgames\controllers\ProjectController.class
@@ -25,6 +26,7 @@ nl\devgames\security\SecurityFilter.class
 nl\devgames\entities\relationships\CommittedTo.class
 gcm\GCMMessage.class
 nl\devgames\security\AuthToken.class
+nl\devgames\services\interfaces\AuthService.class
 nl\devgames\handlers\SonarReportHandler.class
 nl\devgames\controllers\SonarController.class
 nl\devgames\entities\relationships\ProjectMember.class
