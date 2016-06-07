@@ -33,6 +33,10 @@
             <artifactId>neo4j-ogm-core</artifactId>
             <version>${neo4jogm.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
 
         <dependency> <!-- If you're using the Embedded driver -->
             <groupId>org.neo4j</groupId>

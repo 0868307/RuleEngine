@@ -2,7 +2,9 @@ package nl.devgames.controllers;
 
 import nl.devgames.security.AuthToken;
 import nl.devgames.services.UserServiceImpl;
+import org.springframework.http.HttpHeaders;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -14,7 +16,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class AuthController {
     //TODO: add Token class
     @RequestMapping(value = "/login", method = RequestMethod.POST)
-    public String login(@RequestParam(value="username") String username,@RequestParam(value="password") String password) {
+    public String login(@RequestParam(value="username") String username, @RequestParam(value="password") String password) {
+
         UserServiceImpl userService = new UserServiceImpl();
         if(userService.validateUser(username,password)){
             return AuthToken.generate(username);
