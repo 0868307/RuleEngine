@@ -19,8 +19,8 @@ public class Neo4jSessionFactory {
                 Components.configuration()
                         .driverConfiguration()
                         .setDriverClassName("org.neo4j.ogm.drivers.embedded.driver.EmbeddedDriver")
-                        .setURI("file:///etc/ruleengine/database");
-                        //.setURI("file:/database");
+                        //.setURI("file:///etc/ruleengine/database");
+                        .setURI("file:///C:/Users/draikos/Documents/database");
         }
 
         public Session getNeo4jSession() {
