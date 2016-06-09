@@ -16,6 +16,9 @@ import java.util.Set;
 public class Project extends Entity {
     private String name;
 
+    @Relationship(type = "ISSUE_OF")
+    List<Issue> issues;
+
     @Relationship(type = "PROJECT_MEMBER")
     Set<User> projectMembers;
 
@@ -46,5 +49,13 @@ public class Project extends Entity {
             projectMembers = new HashSet<>();
         }
         this.projectMembers.add(projectMember);
+    }
+
+    public List<Issue> getIssues() {
+        return issues;
+    }
+
+    public void setIssues(List<Issue> issues) {
+        this.issues = issues;
     }
 }

@@ -1,5 +1,7 @@
 package nl.devgames.handlers;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import nl.devgames.entities.Issue;
 import nl.devgames.entities.Project;
 import nl.devgames.entities.User;
 import nl.devgames.services.ProjectServiceImpl;
@@ -10,6 +12,12 @@ import org.neo4j.ogm.json.JSONArray;
 import org.neo4j.ogm.json.JSONException;
 import org.neo4j.ogm.json.JSONObject;
 
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 /**
  * Created by Wouter on 5/26/2016.
  */
@@ -19,30 +27,88 @@ public class SonarReportHandler {
     private static final String ISSUE_LEVEL_CRITICAL = "CRITICAL";
     private static final String ISSUE_STATUS_OPEN = "OPEN";
     private static final String ISSUE_STATUS_CLOSED = "CLOSED";
-    private static final String ISSUE_IS_NEW = "isNew";
-    private static final String ISSUE_SEVERITY = "severity";
-    private static final String ISSUE_STATUS = "status";
 
     public SonarReportHandler() {
     }
 
     public void processSonarReport(String jsonAsString) throws JSONException {
         JSONObject jsonObject = new JSONObject(jsonAsString);
-        String naam = jsonObject.getJSONArray("user").getJSONObject(0).getString("naam");
-        String project = jsonObject.getJSONArray("user").getJSONObject(0).getString("project");
-        naam = naam.replaceAll("\\s+","_");
+        String name = jsonObject.getJSONArray("user").getJSONObject(0).getString("naam");
+        String projectName = jsonObject.getJSONArray("user").getJSONObject(0).getString("project");
+        name = name.replaceAll("\\s+","_");
         JSONObject report = jsonObject.getJSONObject("report");
-        JSONArray issues = report.getJSONArray("issues");
-        long points = issuesToPoints(issues);
-        User user = createOrUpdateUser(naam,points);
-        createOrUpdateProject(project,user);
-
+        JSONArray jsonIssues = report.getJSONArray("issues");
+        List<Issue> issues = convertJsonToIssues(jsonIssues);
+        User user = createOrUpdateUser(name);
+        Project project = createOrUpdateProject(projectName,user);
+        List<Issue> currentIssues = compareIssues(project.getIssues(),issues);
+        project.setIssues(currentIssues);
+        issuesToPoints(currentIssues);
+        ProjectService projectService = new ProjectServiceImpl();
+        projectService.save(project);
     }
-    private Long issuesToPoints(JSONArray issues) throws JSONException {
+    private List<Issue> convertJsonToIssues(JSONArray jsonIssues) throws JSONException {
+        List<Issue> issues = new ArrayList<>();
+        for (int issueIndex = 0; issueIndex < jsonIssues.length(); issueIndex++) {
+            Issue issue;
+            try {
+                issue = new ObjectMapper().readValue(jsonIssues.getString(issueIndex),Issue.class);
+                issues.add(issue);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return issues;
+    }
+    // returns all new and resolved issues
+    private List<Issue> compareIssues(List<Issue> oldIssues,List<Issue> newIssues){
+        List<Issue> issues = new ArrayList<>();
+        for(Issue oldIssue : oldIssues){
+            // the old resolved issues aren't relevant anymore for the calculations
+            if(oldIssue.getStatus().equals(ISSUE_STATUS_CLOSED)){
+                oldIssues.remove(oldIssue);
+                continue;
+            }
+            for(Issue newIssue : newIssues){
+                if(oldIssue.getComponent().equals(newIssue.getComponent()) &&
+                        oldIssue.getSeverity().equals(newIssue.getSeverity()) &&
+                        oldIssue.getRule().equals(newIssue.getRule()) &&
+                        oldIssue.getMessage().equals(newIssue.getMessage())){
+                    newIssue.setNew(false);
+                    issues.add(newIssue);
+                    newIssues.remove(newIssue);
+                    oldIssues.remove(oldIssue);
+                    break;
+                }
+            }
+        }
+        // before we removed all the issues that were in the old version from newIssues so the ones left are the new issues
+        for(Issue newIssue : newIssues){
+            issues.add(newIssue);
+        }
+        // before we removed all the issues that are still in the new version from oldIssues so all that is left is the resolved issues
+        for(Issue oldIssue: oldIssues){
+            oldIssue.setStatus(ISSUE_STATUS_CLOSED);
+            issues.add(oldIssue);
+        }
+        return issues;
+    }
+
+    /**
+     * points based on the severity and amount of same mistakes
+     * @param issues
+     * @return
+     * @throws JSONException
+     */
+    private Long issuesToPoints(List<Issue> issues) throws JSONException {
         long points = 0;
-        for (int issueIndex = 0; issueIndex < issues.length(); issueIndex++) {
-            JSONObject issue = issues.getJSONObject(issueIndex);
-            String severity = issue.getString(ISSUE_SEVERITY);
+        Map<String,Integer> ruleMultiplier = new HashMap<String,Integer>();
+        for(Issue issue : issues){
+            int currentCount = ruleMultiplier.get(issue.getRule());
+            ruleMultiplier.replace(issue.getRule(),++currentCount);
+        }
+        for (Issue issue : issues) {
+            String severity = issue.getSeverity();
             long tempPoints = 0;
             if(severity.equals(ISSUE_LEVEL_MINOR)){
                 tempPoints += 1;
@@ -51,18 +117,17 @@ public class SonarReportHandler {
             }else if(severity.equals(ISSUE_LEVEL_CRITICAL)){
                 tempPoints += 10;
             }
-            if(issue.getString(ISSUE_STATUS).equals(ISSUE_STATUS_CLOSED)){
-                points += tempPoints;
-
+            if(issue.getStatus().equals(ISSUE_STATUS_CLOSED)){
+                points += tempPoints * (1 + ruleMultiplier.get(issue.getRule()) / 10);
             }else{
-                if(Boolean.parseBoolean(issue.getString(ISSUE_IS_NEW))){
-                    points -= tempPoints;
+                if(issue.isNew()){
+                    points -= tempPoints * (1 + ruleMultiplier.get(issue.getRule()) / 10);
                 }
             }
         }
         return points;
     }
-    private User createOrUpdateUser(String naam,Long points){
+    private User createOrUpdateUser(String naam){
         UserService userService = new UserServiceImpl();
         User user = userService.findUserByUsername(naam);
         if(user == null){
@@ -70,9 +135,6 @@ public class SonarReportHandler {
             user.setGithubUsername(naam);
             user.setPassword("nieuw");
             user.setUsername(naam);
-            user.setPoints(points);
-        }else{
-            user.setPoints(user.getPoints() + points);
         }
         userService.save(user);
         return user;
