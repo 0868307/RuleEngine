@@ -17,10 +17,19 @@ public class Project extends Entity {
     private String name;
 
     @Relationship(type = "ISSUE_OF")
-    List<Issue> issues;
+    Set<Issue> issues;
 
     @Relationship(type = "PROJECT_MEMBER")
     Set<User> projectMembers;
+
+    private Long lines;
+    private Long linesCommented;
+    private Long duplicationLines;
+    private Long duplicationBlocks;
+    private Long duplicationFiles;
+    private Double duplicationLinesDensity;
+    private Double debt;
+
 
     public Project() {
     }
@@ -51,11 +60,67 @@ public class Project extends Entity {
         this.projectMembers.add(projectMember);
     }
 
-    public List<Issue> getIssues() {
+    public Set<Issue> getIssues() {
         return issues;
     }
 
-    public void setIssues(List<Issue> issues) {
+    public void setIssues(Set<Issue> issues) {
         this.issues = issues;
+    }
+
+    public Long getLines() {
+        return lines;
+    }
+
+    public void setLines(Long lines) {
+        this.lines = lines;
+    }
+
+    public Long getLinesCommented() {
+        return linesCommented;
+    }
+
+    public void setLinesCommented(Long linesCommented) {
+        this.linesCommented = linesCommented;
+    }
+
+    public Long getDuplicationLines() {
+        return duplicationLines;
+    }
+
+    public void setDuplicationLines(Long duplicationLines) {
+        this.duplicationLines = duplicationLines;
+    }
+
+    public Double getDuplicationLinesDensity() {
+        return duplicationLinesDensity;
+    }
+
+    public void setDuplicationLinesDensity(Double duplicationLinesDensity) {
+        this.duplicationLinesDensity = duplicationLinesDensity;
+    }
+
+    public Long getDuplicationBlocks() {
+        return duplicationBlocks;
+    }
+
+    public void setDuplicationBlocks(Long duplicationBlocks) {
+        this.duplicationBlocks = duplicationBlocks;
+    }
+
+    public Long getDuplicationFiles() {
+        return duplicationFiles;
+    }
+
+    public void setDuplicationFiles(Long duplicationFiles) {
+        this.duplicationFiles = duplicationFiles;
+    }
+
+    public Double getDebt() {
+        return debt;
+    }
+
+    public void setDebt(Double debt) {
+        this.debt = debt;
     }
 }

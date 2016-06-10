@@ -16,7 +16,6 @@ public class AuthController {
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     @ResponseStatus(value= HttpStatus.OK)
     public @ResponseBody String login(@RequestParam(value="username") String username, @RequestParam(value="password") String password) {
-
         UserServiceImpl userService = new UserServiceImpl();
         if(userService.validateUser(username,password) == true){
             return AuthToken.generate(username);
@@ -28,5 +27,4 @@ public class AuthController {
         //TODO INVALIDATE TOKEN
         throw new UnsupportedOperationException("This will invalidate your authtoken");
     }
-
 }

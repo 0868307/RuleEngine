@@ -13,10 +13,7 @@ import org.neo4j.ogm.json.JSONException;
 import org.neo4j.ogm.json.JSONObject;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Created by Wouter on 5/26/2016.
@@ -27,6 +24,14 @@ public class SonarReportHandler {
     private static final String ISSUE_LEVEL_CRITICAL = "CRITICAL";
     private static final String ISSUE_STATUS_OPEN = "OPEN";
     private static final String ISSUE_STATUS_CLOSED = "CLOSED";
+    private static final String METRICS_KEY_LINES_COMMENTED = "comment_lines";
+    private static final String METRICS_KEY_LINES = "ncloc";
+    private static final String METRICS_KEY_DUPLICATION_LINES = "duplicated_lines";
+    private static final String METRICS_KEY_DUPLICATION_LINES_DENSITY = "duplicated_lines_density";
+    private static final String METRICS_KEY_DUPLICATION_BLOCKS = "duplicated_blocks";
+    private static final String METRICS_KEY_DUPLICATION_FILES = "duplicated_files";
+    private static final String METRICS_KEY_DEBT = "sqale_index";
+
 
     public SonarReportHandler() {
     }
@@ -37,18 +42,58 @@ public class SonarReportHandler {
         String projectName = jsonObject.getJSONArray("user").getJSONObject(0).getString("project");
         name = name.replaceAll("\\s+","_");
         JSONObject report = jsonObject.getJSONObject("report");
+        JSONArray metrics = getMetricsFromReport(report);
         JSONArray jsonIssues = report.getJSONArray("issues");
-        List<Issue> issues = convertJsonToIssues(jsonIssues);
+        Set<Issue> issues = convertJsonToIssues(jsonIssues);
         User user = createOrUpdateUser(name);
         Project project = createOrUpdateProject(projectName,user);
-        List<Issue> currentIssues = compareIssues(project.getIssues(),issues);
+        Set<Issue> currentIssues = compareIssues(project.getIssues(),issues);
         project.setIssues(currentIssues);
-        issuesToPoints(currentIssues);
+        calculatePointsAndUpdateUser(metrics, currentIssues, project, user);
         ProjectService projectService = new ProjectServiceImpl();
         projectService.save(project);
     }
-    private List<Issue> convertJsonToIssues(JSONArray jsonIssues) throws JSONException {
-        List<Issue> issues = new ArrayList<>();
+
+    private Long calculatePointsAndUpdateUser(JSONArray metrics,Set<Issue> issues,Project project,User user) throws JSONException {
+        metricsToPointsAndSaveToUser(metrics,project,user);
+        issuesToPoints(issues);
+        return null;
+    }
+
+    private Long metricsToPointsAndSaveToUser(JSONArray metrics,Project project,User user) throws JSONException {
+        long points = 0;
+        for (int metricIndex = 0; metricIndex < metrics.length(); metricIndex++) {
+            JSONObject current = metrics.getJSONObject(metricIndex);
+            String value = current.getString("val");
+            switch (current.getString("key")){
+                case METRICS_KEY_LINES:
+                    user.setLinesWritten(user.getLinesWritten() + (project.getLines() - Long.parseLong(value)));
+                    break;
+                case METRICS_KEY_LINES_COMMENTED:
+                    user.setLinesCommented(user.getLinesCommented() + (project.getLinesCommented() - Long.parseLong(value)));
+                    break;
+                case METRICS_KEY_DUPLICATION_LINES:
+                    user.setDuplicationLinesWritten(user.getDuplicationLinesWritten() + (project.getDuplicationLines() - Long.parseLong(value)));
+                    break;
+                case METRICS_KEY_DUPLICATION_LINES_DENSITY:
+                    Double.parseDouble(value);
+                    break;
+                case METRICS_KEY_DUPLICATION_BLOCKS:
+                    user.setDuplicationBlocksWritten(user.getDuplicationBlocksWritten() + (project.getDuplicationBlocks() - Long.parseLong(value)));
+                    break;
+                case METRICS_KEY_DUPLICATION_FILES:
+                    user.setDuplicationFilesWritten(user.getDuplicationFilesWritten() + (project.getDuplicationFiles() - Long.parseLong(value)));
+                    break;
+                case METRICS_KEY_DEBT:
+                    user.setDebtCreated(user.getDebtCreated() + (project.getDebt() - Double.parseDouble(value)));
+                    break;
+            }
+        }
+        return points;
+    }
+
+    private Set<Issue> convertJsonToIssues(JSONArray jsonIssues) throws JSONException {
+        Set<Issue> issues = new HashSet<>();
         for (int issueIndex = 0; issueIndex < jsonIssues.length(); issueIndex++) {
             Issue issue;
             try {
@@ -60,9 +105,16 @@ public class SonarReportHandler {
         }
         return issues;
     }
+    private JSONArray getMetricsFromReport(JSONObject report) throws JSONException {
+        Map<String,Double> metrics = new HashMap<>();
+        JSONArray parent = report.getJSONArray("metrics");
+        JSONObject sonarProject = parent.getJSONObject(0);
+        JSONArray metricsAsArray = sonarProject.getJSONArray("msr");
+        return metricsAsArray;
+    }
     // returns all new and resolved issues
-    private List<Issue> compareIssues(List<Issue> oldIssues,List<Issue> newIssues){
-        List<Issue> issues = new ArrayList<>();
+    private Set<Issue> compareIssues(Set<Issue> oldIssues,Set<Issue> newIssues){
+        Set<Issue> issues = new HashSet<>();
         for(Issue oldIssue : oldIssues){
             // the old resolved issues aren't relevant anymore for the calculations
             if(oldIssue.getStatus().equals(ISSUE_STATUS_CLOSED)){
@@ -100,7 +152,7 @@ public class SonarReportHandler {
      * @return
      * @throws JSONException
      */
-    private Long issuesToPoints(List<Issue> issues) throws JSONException {
+    private Long issuesToPoints(Set<Issue> issues) throws JSONException {
         long points = 0;
         Map<String,Integer> ruleMultiplier = new HashMap<String,Integer>();
         for(Issue issue : issues){

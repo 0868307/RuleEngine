@@ -17,6 +17,14 @@ public class User extends Entity {
     private String githubUsername;
     private long points;
     private String password;
+    private Long linesWritten;
+    private Long linesCommented;
+    private Long duplicationLinesWritten;
+    private Long duplicationBlocksWritten;
+    private Long duplicationFilesWritten;
+    private Double debtCreated;
+
+    List<Achievement> achievements;
 
     public User() {
     }
@@ -54,5 +62,53 @@ public class User extends Entity {
 
     public String getPassword() {
         return password;
+    }
+
+    public Long getLinesWritten() {
+        return linesWritten;
+    }
+
+    public void setLinesWritten(Long linesWritten) {
+        this.linesWritten = linesWritten;
+    }
+
+    public Long getLinesCommented() {
+        return linesCommented;
+    }
+
+    public void setLinesCommented(Long linesCommented) {
+        this.linesCommented = linesCommented;
+    }
+
+    public Long getDuplicationLinesWritten() {
+        return duplicationLinesWritten;
+    }
+
+    public void setDuplicationLinesWritten(Long duplicationLinesWritten) {
+        this.duplicationLinesWritten = duplicationLinesWritten;
+    }
+
+    public Long getDuplicationBlocksWritten() {
+        return duplicationBlocksWritten;
+    }
+
+    public void setDuplicationBlocksWritten(Long duplicationBlocksWritten) {
+        this.duplicationBlocksWritten = duplicationBlocksWritten;
+    }
+
+    public Long getDuplicationFilesWritten() {
+        return duplicationFilesWritten;
+    }
+
+    public void setDuplicationFilesWritten(Long duplicationFilesWritten) {
+        this.duplicationFilesWritten = duplicationFilesWritten;
+    }
+
+    public Double getDebtCreated() {
+        return debtCreated;
+    }
+
+    public void setDebtCreated(Double debtCreated) {
+        this.debtCreated = debtCreated;
     }
 }
