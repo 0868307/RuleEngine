@@ -16,8 +16,19 @@ import java.util.Set;
 public class Project extends Entity {
     private String name;
 
+    @Relationship(type = "ISSUE_OF")
+    Set<Issue> issues;
+
     @Relationship(type = "PROJECT_MEMBER")
     Set<User> projectMembers;
+
+    private long lines;
+    private long linesCommented;
+    private long duplicationLines;
+    private long duplicationBlocks;
+    private long duplicationFiles;
+    private double debt;
+
 
     public Project() {
     }
@@ -46,5 +57,61 @@ public class Project extends Entity {
             projectMembers = new HashSet<>();
         }
         this.projectMembers.add(projectMember);
+    }
+
+    public Set<Issue> getIssues() {
+        return issues;
+    }
+
+    public void setIssues(Set<Issue> issues) {
+        this.issues = issues;
+    }
+
+    public long getLines() {
+        return lines;
+    }
+
+    public void setLines(long lines) {
+        this.lines = lines;
+    }
+
+    public long getLinesCommented() {
+        return linesCommented;
+    }
+
+    public void setLinesCommented(long linesCommented) {
+        this.linesCommented = linesCommented;
+    }
+
+    public long getDuplicationLines() {
+        return duplicationLines;
+    }
+
+    public void setDuplicationLines(long duplicationLines) {
+        this.duplicationLines = duplicationLines;
+    }
+
+    public long getDuplicationBlocks() {
+        return duplicationBlocks;
+    }
+
+    public void setDuplicationBlocks(long duplicationBlocks) {
+        this.duplicationBlocks = duplicationBlocks;
+    }
+
+    public long getDuplicationFiles() {
+        return duplicationFiles;
+    }
+
+    public void setDuplicationFiles(long duplicationFiles) {
+        this.duplicationFiles = duplicationFiles;
+    }
+
+    public double getDebt() {
+        return debt;
+    }
+
+    public void setDebt(double debt) {
+        this.debt = debt;
     }
 }
