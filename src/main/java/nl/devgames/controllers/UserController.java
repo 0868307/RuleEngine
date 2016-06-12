@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.concurrent.atomic.AtomicLong;
 
+import nl.devgames.entities.Achievement;
 import nl.devgames.entities.Project;
 import nl.devgames.entities.User;
 import nl.devgames.security.AuthToken;
@@ -40,5 +41,12 @@ public class UserController {
     public Set<Project> createNewUser(@PathVariable Long uuid) {
         UserServiceImpl userService = new UserServiceImpl();
         return userService.findAllProjectsOfUser(uuid);
+    }
+    @RequestMapping(value = "/user/achievements", method = RequestMethod.GET)
+    public Set<Achievement> getAchievements(@RequestHeader(SecurityFilter.AUTHTOKEN) String authToken){
+        String username = AuthToken.getUsernameFromToken(authToken);
+        UserService userService = new UserServiceImpl();
+        User user = userService.findUserByUsername(username);
+        return user.getAchievements();
     }
 }

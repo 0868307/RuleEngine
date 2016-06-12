@@ -3,10 +3,7 @@ package nl.devgames.entities;
 import org.neo4j.ogm.annotation.NodeEntity;
 import org.neo4j.ogm.annotation.Relationship;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 /**
  * Created by Wouter on 3/5/2016.
@@ -24,6 +21,8 @@ public class User extends Entity {
     private long duplicationFilesWritten;
     private double debtCreated;
 
+
+    @Relationship(type = "ACHIEVEMENT_OF")
     Set<Achievement> achievements;
 
     public User() {
@@ -122,6 +121,9 @@ public class User extends Entity {
     }
 
     public void addAchievements(Achievement achievement) {
+        if(this.achievements == null){
+            this.achievements = new HashSet<>();
+        }
         this.achievements.add(achievement);
     }
 }

@@ -1,6 +1,7 @@
 package nl.devgames.controllers;
 
 import nl.devgames.security.AuthToken;
+import nl.devgames.security.SecurityFilter;
 import nl.devgames.services.UserServiceImpl;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -12,7 +13,6 @@ import org.springframework.web.bind.annotation.*;
  */
 @Controller
 public class AuthController {
-    //TODO: add Token class
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     @ResponseStatus(value= HttpStatus.OK)
     public @ResponseBody String login(@RequestParam(value="username") String username, @RequestParam(value="password") String password) {
@@ -23,8 +23,10 @@ public class AuthController {
             throw new SecurityException("Incorrect login info");
         }
     }
-    public void logout(){
-        //TODO INVALIDATE TOKEN
-        throw new UnsupportedOperationException("This will invalidate your authtoken");
+
+    @RequestMapping(value = "/logout", method = RequestMethod.GET)
+    @ResponseStatus(value= HttpStatus.OK)
+    public void logout(@RequestHeader(SecurityFilter.AUTHTOKEN) String authToken){
+        AuthToken.invalidate(authToken);
     }
 }

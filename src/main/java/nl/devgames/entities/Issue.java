@@ -21,19 +21,6 @@ public class Issue extends Entity {
     public Issue() {
     }
 
-    public Issue(String key, String component, int line, String message, String severity, String rule, String status, boolean isNew, String assignee, String date) {
-        this.key = key;
-        this.component = component;
-        this.line = line;
-        this.message = message;
-        this.severity = severity;
-        this.rule = rule;
-        this.status = status;
-        this.isNew = isNew;
-        this.assignee = assignee;
-        this.date = date;
-    }
-
     public String getKey() {
         return key;
     }
