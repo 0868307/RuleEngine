@@ -25,7 +25,6 @@ public class SonarReportHandler {
     private static final String METRICS_KEY_LINES_COMMENTED = "comment_lines";
     private static final String METRICS_KEY_LINES = "ncloc";
     private static final String METRICS_KEY_DUPLICATION_LINES = "duplicated_lines";
-    private static final String METRICS_KEY_DUPLICATION_LINES_DENSITY = "duplicated_lines_density";
     private static final String METRICS_KEY_DUPLICATION_BLOCKS = "duplicated_blocks";
     private static final String METRICS_KEY_DUPLICATION_FILES = "duplicated_files";
     private static final String METRICS_KEY_DEBT = "sqale_index";
@@ -46,13 +45,12 @@ public class SonarReportHandler {
         User user = createOrUpdateUser(name);
         Project project = createOrUpdateProject(projectName,user);
         Set<Issue> currentIssues = compareIssues(project.getIssues(),issues);
-        project.setIssues(currentIssues);
-        metricsToPointsAndSaveToUser(metrics, currentIssues, project, user);
-        ProjectService projectService = new ProjectServiceImpl();
-        projectService.save(project);
+        metricsToPointsAndSaveToUserAndProject(metrics, currentIssues, project, user);
     }
 
-    private Long metricsToPointsAndSaveToUser(JSONArray metrics,Set<Issue> issues,Project project,User user) throws JSONException {
+    private Long metricsToPointsAndSaveToUserAndProject(JSONArray metrics,Set<Issue> issues,Project project,User user) throws JSONException {
+        UserService userService = new UserServiceImpl();
+        ProjectService projectService = new ProjectServiceImpl();
         long points = 0;
         Map<String,Object> metricsAsMap = new HashMap<>();
         for (int metricIndex = 0; metricIndex < metrics.length(); metricIndex++) {
@@ -64,32 +62,38 @@ public class SonarReportHandler {
             }
             switch (key){
                 case METRICS_KEY_LINES:
-                    long lines = project.getLines() - Long.parseLong(value);
+                    long lines = Long.parseLong(value) - project.getLines();
+                    project.setLines(Long.parseLong(value));
                     metricsAsMap.put(key,lines);
                     user.setLinesWritten(user.getLinesWritten() + lines);
                     break;
                 case METRICS_KEY_LINES_COMMENTED:
-                    lines = project.getLinesCommented() - Long.parseLong(value);
+                    lines = Long.parseLong(value) -project.getLinesCommented();
+                    project.setLinesCommented(Long.parseLong(value));
                     metricsAsMap.put(key,lines);
                     user.setLinesCommented(user.getLinesCommented() + lines);
                     break;
                 case METRICS_KEY_DUPLICATION_LINES:
-                    long duplications = project.getDuplicationLines() - Long.parseLong(value);
+                    long duplications = Long.parseLong(value) - project.getDuplicationLines();
+                    project.setDuplicationLines(Long.parseLong(value));
                     metricsAsMap.put(key,duplications);
                     user.setDuplicationLinesWritten(user.getDuplicationLinesWritten() + duplications);
                     break;
                 case METRICS_KEY_DUPLICATION_BLOCKS:
-                    duplications = project.getDuplicationBlocks() - Long.parseLong(value);
+                    duplications = Long.parseLong(value) - project.getDuplicationBlocks();
+                    project.setDuplicationBlocks(Long.parseLong(value));
                     metricsAsMap.put(key,duplications);
                     user.setDuplicationBlocksWritten(user.getDuplicationBlocksWritten() + duplications);
                     break;
                 case METRICS_KEY_DUPLICATION_FILES:
-                    duplications = project.getDuplicationFiles() - Long.parseLong(value);
+                    duplications = Long.parseLong(value) - project.getDuplicationFiles();
+                    project.setDuplicationFiles(Long.parseLong(value));
                     metricsAsMap.put(key,duplications);
                     user.setDuplicationFilesWritten(user.getDuplicationFilesWritten() + duplications);
                     break;
                 case METRICS_KEY_DEBT:
-                    double debtCreated = project.getDebt() - Double.parseDouble(value);
+                    double debtCreated = Double.parseDouble(value) - project.getDebt();
+                    project.setDebt(Double.parseDouble(value));
                     metricsAsMap.put(key,debtCreated);
                     user.setDebtCreated(user.getDebtCreated() + debtCreated);
                     break;
@@ -97,31 +101,29 @@ public class SonarReportHandler {
                     break;
             }
         }
+        project.setIssues(issues);
         points += metricsToPoints(metricsAsMap,issues);
-        savePointsToUser(user,points);
-        return points;
-    }
-
-    private User savePointsToUser(User user, long points) {
-        UserService userService = new UserServiceImpl();
-        user.setPoints(points);
+        user.setPoints(user.getPoints() + points);
+        projectService.save(project);
         userService.save(user);
-        return user;
+        return points;
     }
 
     private long metricsToPoints(Map<String, Object> metricsAsMap, Set<Issue> issues) throws JSONException {
         long points = 0;
-        points += LinesAndDuplicationsToPoints(metricsAsMap);
+        points += convertLinesAndDuplicationsToPoints(metricsAsMap);
         double debt = 0;
         if(metricsAsMap.containsKey(METRICS_KEY_DEBT)){
             debt = (double)metricsAsMap.get(METRICS_KEY_DEBT);
         }
-        points += issuesToPoints(issues,debt);
+        System.out.println("POINTS Lines: " +points);
+        points += convertIssuesToPoints(issues, debt);
+        System.out.println("POINTS Issues +LINES : " +points);
         return points;
     }
 
     // calculate the "effective" lines added and use it as points
-    private long LinesAndDuplicationsToPoints(Map<String, Object> metricsAsMap) {
+    private long convertLinesAndDuplicationsToPoints(Map<String, Object> metricsAsMap) {
         long points = 0;
         if(metricsAsMap.containsKey(METRICS_KEY_LINES)){
             long lines = (Long)metricsAsMap.get(METRICS_KEY_LINES);
@@ -140,7 +142,6 @@ public class SonarReportHandler {
             }else{
                 points +=lines;
             }
-
         }
         return points;
     }
@@ -152,12 +153,10 @@ public class SonarReportHandler {
             Gson gson = new Gson();
             issue = gson.fromJson(jsonIssues.getString(issueIndex), Issue.class);
             issues.add(issue);
-
         }
         return issues;
     }
     private JSONArray getMetricsFromReport(JSONObject jsonInput) throws JSONException {
-        Map<String,Double> metrics = new HashMap<>();
         JSONArray parent = jsonInput.getJSONArray("metrics");
         JSONObject sonarProject = parent.getJSONObject(0);
         JSONArray metricsAsArray = sonarProject.getJSONArray("msr");
@@ -166,11 +165,16 @@ public class SonarReportHandler {
     // returns all new and resolved issues
     private Set<Issue> compareIssues(Set<Issue> oldIssues,Set<Issue> newIssues){
         Set<Issue> issues = new HashSet<>();
+        Set<Issue> copyNewIssues = new HashSet<>();
+        copyNewIssues.addAll(newIssues);
         if(oldIssues != null){
+
+            Set<Issue> copyOldIssues = new HashSet<>();
+            copyOldIssues.addAll(oldIssues);
             for(Issue oldIssue : oldIssues){
                 // the old resolved issues aren't relevant anymore for the calculations
                 if(oldIssue.getStatus().equals(ISSUE_STATUS_CLOSED)){
-                    oldIssues.remove(oldIssue);
+                    copyOldIssues.remove(oldIssue);
                     continue;
                 }
                 for(Issue newIssue : newIssues){
@@ -180,20 +184,20 @@ public class SonarReportHandler {
                             oldIssue.getMessage().equals(newIssue.getMessage())){
                         newIssue.setNew(false);
                         issues.add(newIssue);
-                        newIssues.remove(newIssue);
-                        oldIssues.remove(oldIssue);
+                        copyNewIssues.remove(newIssue);
+                        copyOldIssues.remove(oldIssue);
                         break;
                     }
                 }
             }
             // before we removed all the issues that are still in the new version from oldIssues so all that is left is the resolved issues
-            for(Issue oldIssue: oldIssues){
+            for(Issue oldIssue: copyOldIssues){
                 oldIssue.setStatus(ISSUE_STATUS_CLOSED);
                 issues.add(oldIssue);
             }
         }
         // before we removed all the issues that were in the old version from newIssues so the ones left are the new issues
-        for(Issue newIssue : newIssues){
+        for(Issue newIssue : copyNewIssues){
             issues.add(newIssue);
         }
         return issues;
@@ -205,7 +209,7 @@ public class SonarReportHandler {
      * @return
      * @throws JSONException
      */
-    private Long issuesToPoints(Set<Issue> issues,double debt) throws JSONException {
+    private Long convertIssuesToPoints(Set<Issue> issues,double debt) throws JSONException {
         long points = 0;
         Map<String,Integer> ruleMultiplierMap = new HashMap<String,Integer>();
         for(Issue issue : issues){

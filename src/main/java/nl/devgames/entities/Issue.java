@@ -113,4 +113,11 @@ public class Issue extends Entity {
     public void setDate(String date) {
         this.date = date;
     }
+
+    @Override
+    public String toString() {
+        return "Issue{" +
+                "message='" + message + '\'' +
+                '}';
+    }
 }

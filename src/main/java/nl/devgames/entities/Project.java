@@ -27,7 +27,6 @@ public class Project extends Entity {
     private long duplicationLines;
     private long duplicationBlocks;
     private long duplicationFiles;
-    private double duplicationLinesDensity;
     private double debt;
 
 
@@ -106,14 +105,6 @@ public class Project extends Entity {
 
     public void setDuplicationFiles(long duplicationFiles) {
         this.duplicationFiles = duplicationFiles;
-    }
-
-    public double getDuplicationLinesDensity() {
-        return duplicationLinesDensity;
-    }
-
-    public void setDuplicationLinesDensity(double duplicationLinesDensity) {
-        this.duplicationLinesDensity = duplicationLinesDensity;
     }
 
     public double getDebt() {
