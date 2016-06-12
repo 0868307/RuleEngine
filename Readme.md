@@ -3,7 +3,7 @@
 
 ## Auth
 ```
-POST
+GET
 /login?username=xxx&password=xxx
 Geeft een authtoken terug
 ```
