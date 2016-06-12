@@ -19,8 +19,6 @@ import java.util.Set;
  */
 @RestController
 public class RankingController {
-
-    //private static final Logger logger = LoggerFactory.getLogger(Application.class);
     @RequestMapping(value = "/ranking",method = RequestMethod.GET)
     public @ResponseBody List<Ranking> getRankingAll(){
         UserService userService = new UserServiceImpl();

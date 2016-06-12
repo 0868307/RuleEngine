@@ -16,9 +16,7 @@ public class AuthController {
     @ResponseStatus(value= HttpStatus.OK)
     public @ResponseBody String login(@RequestParam(value="username") String username, @RequestParam(value="password") String password) {
         UserServiceImpl userService = new UserServiceImpl();
-        if(userService.validateUser(username,password) == true){
-            String a_token = AuthToken.generate(username);
-            SecurityFilter.auth_token = a_token;
+        if(userService.validateUser(username,password)){
             return AuthToken.generate(username);
         }else{
             throw new SecurityException("Incorrect login info");

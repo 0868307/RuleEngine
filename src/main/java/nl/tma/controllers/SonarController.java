@@ -16,8 +16,6 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 public class SonarController {
-
-    private static final Logger logger = LoggerFactory.getLogger(Application.class);
     @RequestMapping(value = "/sonar",method = RequestMethod.POST)
     public boolean saveSonarInfo(@RequestBody String jsonAsString) {
         try {

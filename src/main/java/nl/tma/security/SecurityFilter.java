@@ -13,19 +13,19 @@ import java.io.IOException;
 @Component
 public class SecurityFilter implements Filter {
     public static final String AUTHORIZATION = "Authorization";
-    public static String auth_token = "";
     @Override
     public void doFilter(ServletRequest req, ServletResponse res,
                          FilterChain chain) throws IOException, ServletException {
 
         HttpServletResponse response = (HttpServletResponse) res;
+        String authToken = response.getHeader(AUTHORIZATION);
         String path = ((HttpServletRequest) req).getRequestURI();
         if (path.startsWith("/login") || path.startsWith("/sonar")) {
             chain.doFilter(req, res);
         }
-        else if (!authorize(auth_token)) {
+        else if (!authorize(authToken)) {
 
-            throw new SecurityException(auth_token);
+            throw new SecurityException("Not a valid token");
         }
         chain.doFilter(req, res);
 

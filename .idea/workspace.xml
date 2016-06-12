@@ -1,175 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="53d5e522-7c81-4790-969b-b426e692f986" name="Default" comment="Project Opgeschoond">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/nl/tma/Application.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/nl/tma/controllers/ProjectController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/nl/tma/handlers/ReportProcessor.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/nl/tma/controllers/UserController.java" />
-      <change type="DELETED" beforePath="C:\Users\Wouter\Documents\GitHub\RuleEngine\RuleEngine\src\main\java\gcm\GCMMessage.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Wouter\Documents\GitHub\RuleEngine\RuleEngine\src\main\java\gcm\GCMPoster.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Wouter\Documents\GitHub\RuleEngine\RuleEngine\src\main\java\nl\devgames\Application.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Wouter\Documents\GitHub\RuleEngine\RuleEngine\src\main\java\nl\devgames\controllers\ProjectController.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Wouter\Documents\GitHub\RuleEngine\RuleEngine\src\main\java\nl\devgames\controllers\UserController.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Wouter\Documents\GitHub\RuleEngine\RuleEngine\src\main\java\nl\devgames\entities\Commit.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Wouter\Documents\GitHub\RuleEngine\RuleEngine\src\main\java\nl\devgames\entities\Rule.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Wouter\Documents\GitHub\RuleEngine\RuleEngine\src\main\java\nl\devgames\entities\relationships\CommittedBy.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Wouter\Documents\GitHub\RuleEngine\RuleEngine\src\main\java\nl\devgames\entities\relationships\CommittedTo.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Wouter\Documents\GitHub\RuleEngine\RuleEngine\src\main\java\nl\devgames\services\AuthServiceImpl.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Wouter\Documents\GitHub\RuleEngine\RuleEngine\src\main\java\nl\devgames\services\CommitServiceImpl.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Wouter\Documents\GitHub\RuleEngine\RuleEngine\src\main\java\nl\devgames\services\interfaces\AuthService.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Wouter\Documents\GitHub\RuleEngine\RuleEngine\src\main\java\nl\devgames\services\interfaces\CommitService.java" afterPath="" />
-      <change type="MOVED" beforePath="C:\Users\Wouter\Documents\GitHub\RuleEngine\RuleEngine\src\main\java\nl\devgames\controllers\AuthController.java" afterPath="$PROJECT_DIR$/src/main/java/nl/tma/controllers/AuthController.java" />
-      <change type="MOVED" beforePath="C:\Users\Wouter\Documents\GitHub\RuleEngine\RuleEngine\src\main\java\nl\devgames\controllers\RankingController.java" afterPath="$PROJECT_DIR$/src/main/java/nl/tma/controllers/RankingController.java" />
-      <change type="MOVED" beforePath="C:\Users\Wouter\Documents\GitHub\RuleEngine\RuleEngine\src\main\java\nl\devgames\controllers\SonarController.java" afterPath="$PROJECT_DIR$/src/main/java/nl/tma/controllers/SonarController.java" />
-      <change type="MOVED" beforePath="C:\Users\Wouter\Documents\GitHub\RuleEngine\RuleEngine\src\main\java\nl\devgames\entities\Achievement.java" afterPath="$PROJECT_DIR$/src/main/java/nl/tma/entities/Achievement.java" />
-      <change type="MOVED" beforePath="C:\Users\Wouter\Documents\GitHub\RuleEngine\RuleEngine\src\main\java\nl\devgames\entities\Entity.java" afterPath="$PROJECT_DIR$/src/main/java/nl/tma/entities/Entity.java" />
-      <change type="MOVED" beforePath="C:\Users\Wouter\Documents\GitHub\RuleEngine\RuleEngine\src\main\java\nl\devgames\entities\Issue.java" afterPath="$PROJECT_DIR$/src/main/java/nl/tma/entities/Issue.java" />
-      <change type="MOVED" beforePath="C:\Users\Wouter\Documents\GitHub\RuleEngine\RuleEngine\src\main\java\nl\devgames\entities\Project.java" afterPath="$PROJECT_DIR$/src/main/java/nl/tma/entities/Project.java" />
-      <change type="MOVED" beforePath="C:\Users\Wouter\Documents\GitHub\RuleEngine\RuleEngine\src\main\java\nl\devgames\entities\Ranking.java" afterPath="$PROJECT_DIR$/src/main/java/nl/tma/entities/Ranking.java" />
-      <change type="MOVED" beforePath="C:\Users\Wouter\Documents\GitHub\RuleEngine\RuleEngine\src\main\java\nl\devgames\entities\User.java" afterPath="$PROJECT_DIR$/src/main/java/nl/tma/entities/User.java" />
-      <change type="MOVED" beforePath="C:\Users\Wouter\Documents\GitHub\RuleEngine\RuleEngine\src\main\java\nl\devgames\entities\relationships\ProjectMember.java" afterPath="$PROJECT_DIR$/src/main/java/nl/tma/entities/relationships/ProjectMember.java" />
-      <change type="MOVED" beforePath="C:\Users\Wouter\Documents\GitHub\RuleEngine\RuleEngine\src\main\java\nl\devgames\factories\Neo4jSessionFactory.java" afterPath="$PROJECT_DIR$/src/main/java/nl/tma/factories/Neo4jSessionFactory.java" />
-      <change type="MOVED" beforePath="C:\Users\Wouter\Documents\GitHub\RuleEngine\RuleEngine\src\main\java\nl\devgames\handlers\AchievementHandler.java" afterPath="$PROJECT_DIR$/src/main/java/nl/tma/handlers/AchievementHandler.java" />
-      <change type="MOVED" beforePath="C:\Users\Wouter\Documents\GitHub\RuleEngine\RuleEngine\src\main\java\nl\devgames\handlers\SonarReportHandler.java" afterPath="$PROJECT_DIR$/src/main/java/nl/tma/handlers/SonarReportHandler.java" />
-      <change type="MOVED" beforePath="C:\Users\Wouter\Documents\GitHub\RuleEngine\RuleEngine\src\main\java\nl\devgames\security\AuthToken.java" afterPath="$PROJECT_DIR$/src/main/java/nl/tma/security/AuthToken.java" />
-      <change type="MOVED" beforePath="C:\Users\Wouter\Documents\GitHub\RuleEngine\RuleEngine\src\main\java\nl\devgames\security\SecurityFilter.java" afterPath="$PROJECT_DIR$/src/main/java/nl/tma/security/SecurityFilter.java" />
-      <change type="MOVED" beforePath="C:\Users\Wouter\Documents\GitHub\RuleEngine\RuleEngine\src\main\java\nl\devgames\services\GenericService.java" afterPath="$PROJECT_DIR$/src/main/java/nl/tma/services/GenericService.java" />
-      <change type="MOVED" beforePath="C:\Users\Wouter\Documents\GitHub\RuleEngine\RuleEngine\src\main\java\nl\devgames\services\ProjectServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/nl/tma/services/ProjectServiceImpl.java" />
-      <change type="MOVED" beforePath="C:\Users\Wouter\Documents\GitHub\RuleEngine\RuleEngine\src\main\java\nl\devgames\services\Service.java" afterPath="$PROJECT_DIR$/src/main/java/nl/tma/services/Service.java" />
-      <change type="MOVED" beforePath="C:\Users\Wouter\Documents\GitHub\RuleEngine\RuleEngine\src\main\java\nl\devgames\services\UserServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/nl/tma/services/UserServiceImpl.java" />
-      <change type="MOVED" beforePath="C:\Users\Wouter\Documents\GitHub\RuleEngine\RuleEngine\src\main\java\nl\devgames\services\interfaces\ProjectService.java" afterPath="$PROJECT_DIR$/src/main/java/nl/tma/services/interfaces/ProjectService.java" />
-      <change type="MOVED" beforePath="C:\Users\Wouter\Documents\GitHub\RuleEngine\RuleEngine\src\main\java\nl\devgames\services\interfaces\UserService.java" afterPath="$PROJECT_DIR$/src/main/java/nl/tma/services/interfaces/UserService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ruleengine-0.1.0.jar.original" afterPath="$PROJECT_DIR$/target/ruleengine-0.1.0.jar.original" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_doc/nl/devgames/entities/Achievement.html" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/entities/Achievement.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_doc/nl/devgames/entities/class-use/Achievement.html" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/entities/class-use/Achievement.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_doc/nl/devgames/handlers/AchievementHandler.html" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/handlers/AchievementHandler.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_doc/nl/devgames/handlers/class-use/AchievementHandler.html" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/handlers/class-use/AchievementHandler.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_doc/nl/devgames/Application.html" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/Application.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_doc/nl/devgames/class-use/Application.html" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/class-use/Application.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_doc/nl/devgames/controllers/AuthController.html" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/controllers/AuthController.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_doc/nl/devgames/controllers/class-use/AuthController.html" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/controllers/class-use/AuthController.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_doc/nl/devgames/services/interfaces/AuthService.html" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/services/interfaces/AuthService.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_doc/nl/devgames/services/interfaces/class-use/AuthService.html" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/services/interfaces/class-use/AuthService.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_doc/nl/devgames/services/AuthServiceImpl.html" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/services/AuthServiceImpl.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_doc/nl/devgames/services/class-use/AuthServiceImpl.html" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/services/class-use/AuthServiceImpl.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_doc/nl/devgames/security/AuthToken.html" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/security/AuthToken.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_doc/nl/devgames/security/class-use/AuthToken.html" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/security/class-use/AuthToken.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_doc/nl/devgames/entities/Commit.html" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/entities/Commit.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_doc/nl/devgames/entities/class-use/Commit.html" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/entities/class-use/Commit.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_doc/nl/devgames/services/interfaces/CommitService.html" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/services/interfaces/CommitService.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_doc/nl/devgames/services/interfaces/class-use/CommitService.html" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/services/interfaces/class-use/CommitService.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_doc/nl/devgames/services/CommitServiceImpl.html" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/services/CommitServiceImpl.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_doc/nl/devgames/services/class-use/CommitServiceImpl.html" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/services/class-use/CommitServiceImpl.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_doc/nl/devgames/entities/relationships/CommittedBy.html" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/entities/relationships/CommittedBy.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_doc/nl/devgames/entities/relationships/class-use/CommittedBy.html" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/entities/relationships/class-use/CommittedBy.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_doc/nl/devgames/entities/relationships/CommittedTo.html" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/entities/relationships/CommittedTo.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_doc/nl/devgames/entities/relationships/class-use/CommittedTo.html" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/entities/relationships/class-use/CommittedTo.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_doc/nl/devgames/entities/Entity.html" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/entities/Entity.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_doc/nl/devgames/entities/class-use/Entity.html" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/entities/class-use/Entity.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_doc/gcm/class-use/GCMMessage.html" afterPath="$PROJECT_DIR$/java_doc/gcm/class-use/GCMMessage.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_doc/nl/devgames/services/GenericService.html" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/services/GenericService.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_doc/nl/devgames/services/class-use/GenericService.html" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/services/class-use/GenericService.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_doc/nl/devgames/entities/Issue.html" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/entities/Issue.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_doc/nl/devgames/entities/class-use/Issue.html" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/entities/class-use/Issue.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_doc/nl/devgames/factories/Neo4jSessionFactory.html" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/factories/Neo4jSessionFactory.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_doc/nl/devgames/factories/class-use/Neo4jSessionFactory.html" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/factories/class-use/Neo4jSessionFactory.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_doc/nl/devgames/entities/Project.html" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/entities/Project.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_doc/nl/devgames/entities/class-use/Project.html" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/entities/class-use/Project.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_doc/nl/devgames/controllers/ProjectController.html" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/controllers/ProjectController.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_doc/nl/devgames/controllers/class-use/ProjectController.html" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/controllers/class-use/ProjectController.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_doc/nl/devgames/entities/relationships/ProjectMember.html" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/entities/relationships/ProjectMember.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_doc/nl/devgames/entities/relationships/class-use/ProjectMember.html" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/entities/relationships/class-use/ProjectMember.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_doc/nl/devgames/services/interfaces/ProjectService.html" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/services/interfaces/ProjectService.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_doc/nl/devgames/services/interfaces/class-use/ProjectService.html" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/services/interfaces/class-use/ProjectService.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_doc/nl/devgames/services/ProjectServiceImpl.html" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/services/ProjectServiceImpl.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_doc/nl/devgames/services/class-use/ProjectServiceImpl.html" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/services/class-use/ProjectServiceImpl.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_doc/nl/devgames/entities/Ranking.html" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/entities/Ranking.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_doc/nl/devgames/entities/class-use/Ranking.html" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/entities/class-use/Ranking.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_doc/nl/devgames/controllers/RankingController.html" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/controllers/RankingController.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_doc/nl/devgames/controllers/class-use/RankingController.html" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/controllers/class-use/RankingController.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_doc/nl/devgames/entities/Rule.html" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/entities/Rule.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_doc/nl/devgames/entities/class-use/Rule.html" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/entities/class-use/Rule.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_doc/nl/devgames/security/SecurityFilter.html" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/security/SecurityFilter.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_doc/nl/devgames/security/class-use/SecurityFilter.html" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/security/class-use/SecurityFilter.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_doc/nl/devgames/services/Service.html" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/services/Service.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_doc/nl/devgames/services/class-use/Service.html" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/services/class-use/Service.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_doc/nl/devgames/controllers/SonarController.html" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/controllers/SonarController.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_doc/nl/devgames/controllers/class-use/SonarController.html" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/controllers/class-use/SonarController.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_doc/nl/devgames/handlers/SonarReportHandler.html" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/handlers/SonarReportHandler.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_doc/nl/devgames/handlers/class-use/SonarReportHandler.html" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/handlers/class-use/SonarReportHandler.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_doc/nl/devgames/entities/User.html" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/entities/User.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_doc/nl/devgames/entities/class-use/User.html" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/entities/class-use/User.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_doc/nl/devgames/controllers/UserController.html" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/controllers/UserController.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_doc/nl/devgames/controllers/class-use/UserController.html" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/controllers/class-use/UserController.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_doc/nl/devgames/services/interfaces/UserService.html" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/services/interfaces/UserService.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_doc/nl/devgames/services/interfaces/class-use/UserService.html" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/services/interfaces/class-use/UserService.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_doc/nl/devgames/services/UserServiceImpl.html" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/services/UserServiceImpl.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_doc/nl/devgames/services/class-use/UserServiceImpl.html" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/services/class-use/UserServiceImpl.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_doc/allclasses-frame.html" afterPath="$PROJECT_DIR$/java_doc/allclasses-frame.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_doc/allclasses-noframe.html" afterPath="$PROJECT_DIR$/java_doc/allclasses-noframe.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_doc/constant-values.html" afterPath="$PROJECT_DIR$/java_doc/constant-values.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_doc/index-files/index-1.html" afterPath="$PROJECT_DIR$/java_doc/index-files/index-1.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_doc/index-files/index-10.html" afterPath="$PROJECT_DIR$/java_doc/index-files/index-10.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_doc/index-files/index-11.html" afterPath="$PROJECT_DIR$/java_doc/index-files/index-11.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_doc/index-files/index-12.html" afterPath="$PROJECT_DIR$/java_doc/index-files/index-12.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_doc/index-files/index-13.html" afterPath="$PROJECT_DIR$/java_doc/index-files/index-13.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_doc/index-files/index-14.html" afterPath="$PROJECT_DIR$/java_doc/index-files/index-14.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_doc/index-files/index-15.html" afterPath="$PROJECT_DIR$/java_doc/index-files/index-15.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_doc/index-files/index-16.html" afterPath="$PROJECT_DIR$/java_doc/index-files/index-16.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_doc/index-files/index-17.html" afterPath="$PROJECT_DIR$/java_doc/index-files/index-17.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_doc/index-files/index-18.html" afterPath="$PROJECT_DIR$/java_doc/index-files/index-18.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_doc/index-files/index-2.html" afterPath="$PROJECT_DIR$/java_doc/index-files/index-2.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_doc/index-files/index-3.html" afterPath="$PROJECT_DIR$/java_doc/index-files/index-3.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_doc/index-files/index-4.html" afterPath="$PROJECT_DIR$/java_doc/index-files/index-4.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_doc/index-files/index-5.html" afterPath="$PROJECT_DIR$/java_doc/index-files/index-5.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_doc/index-files/index-6.html" afterPath="$PROJECT_DIR$/java_doc/index-files/index-6.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_doc/index-files/index-7.html" afterPath="$PROJECT_DIR$/java_doc/index-files/index-7.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_doc/index-files/index-8.html" afterPath="$PROJECT_DIR$/java_doc/index-files/index-8.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_doc/index-files/index-9.html" afterPath="$PROJECT_DIR$/java_doc/index-files/index-9.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_doc/overview-frame.html" afterPath="$PROJECT_DIR$/java_doc/overview-frame.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_doc/overview-summary.html" afterPath="$PROJECT_DIR$/java_doc/overview-summary.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_doc/overview-tree.html" afterPath="$PROJECT_DIR$/java_doc/overview-tree.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_doc/nl/devgames/package-frame.html" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/package-frame.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_doc/nl/devgames/controllers/package-frame.html" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/controllers/package-frame.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_doc/nl/devgames/entities/package-frame.html" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/entities/package-frame.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_doc/nl/devgames/entities/relationships/package-frame.html" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/entities/relationships/package-frame.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_doc/nl/devgames/factories/package-frame.html" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/factories/package-frame.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_doc/nl/devgames/handlers/package-frame.html" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/handlers/package-frame.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_doc/nl/devgames/security/package-frame.html" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/security/package-frame.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_doc/nl/devgames/services/package-frame.html" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/services/package-frame.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_doc/nl/devgames/services/interfaces/package-frame.html" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/services/interfaces/package-frame.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_doc/nl/devgames/package-summary.html" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/package-summary.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_doc/nl/devgames/controllers/package-summary.html" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/controllers/package-summary.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_doc/nl/devgames/entities/package-summary.html" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/entities/package-summary.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_doc/nl/devgames/entities/relationships/package-summary.html" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/entities/relationships/package-summary.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_doc/nl/devgames/factories/package-summary.html" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/factories/package-summary.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_doc/nl/devgames/handlers/package-summary.html" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/handlers/package-summary.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_doc/nl/devgames/security/package-summary.html" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/security/package-summary.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_doc/nl/devgames/services/package-summary.html" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/services/package-summary.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_doc/nl/devgames/services/interfaces/package-summary.html" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/services/interfaces/package-summary.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_doc/nl/devgames/package-tree.html" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/package-tree.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_doc/nl/devgames/controllers/package-tree.html" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/controllers/package-tree.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_doc/nl/devgames/entities/package-tree.html" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/entities/package-tree.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_doc/nl/devgames/entities/relationships/package-tree.html" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/entities/relationships/package-tree.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_doc/nl/devgames/factories/package-tree.html" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/factories/package-tree.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_doc/nl/devgames/handlers/package-tree.html" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/handlers/package-tree.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_doc/nl/devgames/security/package-tree.html" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/security/package-tree.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_doc/nl/devgames/services/package-tree.html" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/services/package-tree.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_doc/nl/devgames/services/interfaces/package-tree.html" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/services/interfaces/package-tree.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_doc/gcm/package-use.html" afterPath="$PROJECT_DIR$/java_doc/gcm/package-use.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_doc/nl/devgames/package-use.html" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/package-use.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_doc/nl/devgames/controllers/package-use.html" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/controllers/package-use.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_doc/nl/devgames/entities/package-use.html" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/entities/package-use.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_doc/nl/devgames/entities/relationships/package-use.html" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/entities/relationships/package-use.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_doc/nl/devgames/factories/package-use.html" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/factories/package-use.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_doc/nl/devgames/handlers/package-use.html" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/handlers/package-use.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_doc/nl/devgames/security/package-use.html" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/security/package-use.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_doc/nl/devgames/services/package-use.html" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/services/package-use.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java_doc/nl/devgames/services/interfaces/package-use.html" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/services/interfaces/package-use.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" />
+    <list default="true" id="53d5e522-7c81-4790-969b-b426e692f986" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/nl/tma/controllers/AuthController.java" afterPath="$PROJECT_DIR$/src/main/java/nl/tma/controllers/AuthController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/nl/tma/controllers/RankingController.java" afterPath="$PROJECT_DIR$/src/main/java/nl/tma/controllers/RankingController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/nl/tma/security/SecurityFilter.java" afterPath="$PROJECT_DIR$/src/main/java/nl/tma/security/SecurityFilter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/nl/tma/controllers/SonarController.java" afterPath="$PROJECT_DIR$/src/main/java/nl/tma/controllers/SonarController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="gs-rest-service.iws" />
@@ -196,11 +32,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Application.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/nl/tma/Application.java">
+      <file leaf-file-name="Service.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/nl/tma/services/Service.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="255">
-              <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="289">
+              <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -209,18 +45,30 @@
       <file leaf-file-name="SonarReportHandler.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/nl/tma/handlers/SonarReportHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="4728" max-vertical-offset="5627">
+            <state vertical-scroll-proportion="0.0" vertical-offset="127" max-vertical-offset="5627">
               <caret line="324" column="18" selection-start-line="324" selection-start-column="18" selection-end-line="324" selection-end-column="18" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ProjectServiceImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/nl/tma/services/ProjectServiceImpl.java">
+      <file leaf-file-name="UserServiceImpl.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/nl/tma/services/UserServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="578">
-              <caret line="33" column="19" selection-start-line="33" selection-start-column="19" selection-end-line="33" selection-end-column="19" />
+            <state vertical-scroll-proportion="0.57239056" vertical-offset="0" max-vertical-offset="1496">
+              <caret line="22" column="32" selection-start-line="22" selection-start-column="32" selection-end-line="22" selection-end-column="32" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Application.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/nl/tma/Application.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="255">
+              <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -236,10 +84,20 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="ProjectServiceImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/nl/tma/services/ProjectServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="578">
+              <caret line="33" column="19" selection-start-line="33" selection-start-column="19" selection-end-line="33" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="GenericService.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/nl/tma/services/GenericService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="629">
+            <state vertical-scroll-proportion="0.0" vertical-offset="35" max-vertical-offset="629">
               <caret line="21" column="25" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
               <folding>
                 <element signature="e#580#581#0" expanded="true" />
@@ -249,32 +107,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/nl/tma/services/interfaces/UserService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="442">
-              <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="SecurityFilter.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/nl/tma/security/SecurityFilter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="714">
-              <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="18" max-vertical-offset="714">
+              <caret line="27" column="58" selection-start-line="27" selection-start-column="58" selection-end-line="27" selection-end-column="58" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AchievementHandler.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AchievementHandler.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/nl/tma/handlers/AchievementHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.2558923" vertical-offset="444" max-vertical-offset="1343">
+            <state vertical-scroll-proportion="0.0" vertical-offset="36" max-vertical-offset="1343">
               <caret line="73" column="29" selection-start-line="73" selection-start-column="29" selection-end-line="73" selection-end-column="29" />
               <folding />
             </state>
@@ -299,8 +145,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/ogm.properties" />
-        <option value="$PROJECT_DIR$/src/main/java/nl/devgames/entities/relationships/WorksOn.java" />
         <option value="$PROJECT_DIR$/src/main/java/nl/devgames/entities/relationships/CommittedTo.java" />
         <option value="$PROJECT_DIR$/src/main/java/nl/devgames/entities/relationships/CommittedBy.java" />
         <option value="$PROJECT_DIR$/src/main/java/nl/devgames/entities/relationships/ProjectMember.java" />
@@ -348,6 +192,10 @@
         <option value="$PROJECT_DIR$/src/main/java/nl/tma/services/interfaces/UserService.java" />
         <option value="$PROJECT_DIR$/src/main/java/nl/tma/services/UserServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/nl/tma/handlers/AchievementHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/nl/tma/security/SecurityFilter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/nl/tma/controllers/AuthController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/nl/tma/controllers/SonarController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/nl/tma/controllers/RankingController.java" />
       </list>
     </option>
   </component>
@@ -1180,7 +1028,7 @@
       <workItem from="1465754105942" duration="54000" />
       <workItem from="1465754168943" duration="148000" />
       <workItem from="1465754642020" duration="2930000" />
-      <workItem from="1465759368436" duration="520000" />
+      <workItem from="1465759368436" duration="1327000" />
     </task>
     <task id="LOCAL-00001" summary="Ranking en Authtoken">
       <created>1464223788769</created>
@@ -1266,15 +1114,21 @@
       <option name="project" value="LOCAL" />
       <updated>1465734015761</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Project Opgeschoond">
+      <created>1465759951492</created>
+      <option name="number" value="00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1465759951493</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="118384000" />
+    <option name="totallyTimeSpent" value="119191000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.1372973" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1290,7 +1144,7 @@
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32866243" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16027689" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16027689" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32972974" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1460,124 +1314,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/nl/tma/entities/Entity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="459">
-          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/nl/tma/entities/Ranking.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="476">
-          <caret line="7" column="16" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/nl/tma/entities/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="924" max-vertical-offset="1683">
-          <caret line="132" column="5" selection-start-line="132" selection-start-column="5" selection-end-line="132" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/nl/tma/entities/Project.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="816" max-vertical-offset="1530">
-          <caret line="65" column="22" selection-start-line="65" selection-start-column="22" selection-end-line="65" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/nl/tma/entities/Issue.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="238" max-vertical-offset="850">
-          <caret line="71" column="5" selection-start-line="71" selection-start-column="5" selection-end-line="71" selection-end-column="5" />
-          <folding>
-            <element signature="e#739#740#0" expanded="true" />
-            <element signature="e#771#772#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/nl/tma/entities/Achievement.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
-          <caret line="20" column="5" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
-          <folding>
-            <element signature="e#344#345#0" expanded="true" />
-            <element signature="e#372#373#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/nl/tma/factories/Neo4jSessionFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="272" max-vertical-offset="442">
-          <caret line="20" column="55" selection-start-line="20" selection-start-column="55" selection-end-line="20" selection-end-column="55" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/nl/tma/controllers/SonarController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="357" max-vertical-offset="646">
-          <caret line="21" column="65" selection-start-line="21" selection-start-column="65" selection-end-line="21" selection-end-column="65" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/nl/tma/controllers/RankingController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
-          <caret line="27" column="23" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/nl/tma/controllers/AuthController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="578">
-          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/nl/tma/controllers/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="714">
-          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/nl/tma/entities/relationships/ProjectMember.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="731">
-          <caret line="16" column="22" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/nl/tma/controllers/ProjectController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="476">
-          <caret line="28" column="23" selection-start-line="28" selection-start-column="23" selection-end-line="28" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/application.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="102">
@@ -1594,36 +1330,166 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/nl/tma/services/Service.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/nl/tma/services/interfaces/UserService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="289">
-          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/nl/tma/services/UserServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1496">
-          <caret line="21" column="25" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="442">
+          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/nl/tma/Application.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/nl/tma/controllers/SonarController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="255">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="476">
+          <caret line="17" column="30" selection-start-line="17" selection-start-column="30" selection-end-line="17" selection-end-column="30" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/nl/tma/services/ProjectServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/nl/tma/controllers/RankingController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="578">
-          <caret line="33" column="19" selection-start-line="33" selection-start-column="19" selection-end-line="33" selection-end-column="19" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="476">
+          <caret line="20" column="32" selection-start-line="20" selection-start-column="32" selection-end-line="20" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/nl/tma/controllers/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="714">
+          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/nl/tma/controllers/ProjectController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="476">
+          <caret line="28" column="23" selection-start-line="28" selection-start-column="23" selection-end-line="28" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/nl/tma/controllers/AuthController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="544">
+          <caret line="19" column="48" selection-start-line="19" selection-start-column="48" selection-end-line="19" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/nl/tma/entities/relationships/ProjectMember.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="731">
+          <caret line="16" column="22" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/nl/tma/entities/Achievement.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
+          <caret line="20" column="5" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
+          <folding>
+            <element signature="e#344#345#0" expanded="true" />
+            <element signature="e#372#373#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/nl/tma/entities/Entity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="459">
+          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/nl/tma/entities/Issue.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="238" max-vertical-offset="850">
+          <caret line="71" column="5" selection-start-line="71" selection-start-column="5" selection-end-line="71" selection-end-column="5" />
+          <folding>
+            <element signature="e#1502#1503#0" expanded="true" />
+            <element signature="e#1533#1534#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/nl/tma/entities/Project.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="69" max-vertical-offset="1513">
+          <caret line="65" column="22" selection-start-line="65" selection-start-column="22" selection-end-line="65" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1409#1410#0" expanded="true" />
+            <element signature="e#1445#1446#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/nl/tma/entities/Ranking.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="476">
+          <caret line="7" column="16" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/nl/tma/entities/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1564">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/nl/tma/factories/Neo4jSessionFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="272" max-vertical-offset="442">
+          <caret line="20" column="55" selection-start-line="20" selection-start-column="55" selection-end-line="20" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/nl/tma/handlers/AchievementHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="444" max-vertical-offset="1343">
+          <caret line="73" column="29" selection-start-line="73" selection-start-column="29" selection-end-line="73" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/nl/tma/handlers/ReportProcessor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="238">
+          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/nl/tma/handlers/SonarReportHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="4881" max-vertical-offset="5882">
+          <caret line="324" column="18" selection-start-line="324" selection-start-column="18" selection-end-line="324" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/nl/tma/security/AuthToken.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="493">
+          <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/nl/tma/security/SecurityFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="18" max-vertical-offset="714">
+          <caret line="27" column="58" selection-start-line="27" selection-start-column="58" selection-end-line="27" selection-end-column="58" />
           <folding />
         </state>
       </provider>
@@ -1639,53 +1505,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/nl/tma/services/interfaces/UserService.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/nl/tma/services/ProjectServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="442">
-          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/nl/tma/security/SecurityFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="714">
-          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="578">
+          <caret line="33" column="19" selection-start-line="33" selection-start-column="19" selection-end-line="33" selection-end-column="19" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/nl/tma/security/AuthToken.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/nl/tma/services/Service.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="493">
-          <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/nl/tma/handlers/SonarReportHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="4881" max-vertical-offset="5882">
-          <caret line="324" column="18" selection-start-line="324" selection-start-column="18" selection-end-line="324" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/nl/tma/handlers/ReportProcessor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="238">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="289">
           <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/nl/tma/handlers/AchievementHandler.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/nl/tma/Application.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.2558923" vertical-offset="444" max-vertical-offset="1343">
-          <caret line="73" column="29" selection-start-line="73" selection-start-column="29" selection-end-line="73" selection-end-column="29" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="255">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/nl/tma/services/UserServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.57239056" vertical-offset="0" max-vertical-offset="1496">
+          <caret line="22" column="32" selection-start-line="22" selection-start-column="32" selection-end-line="22" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
