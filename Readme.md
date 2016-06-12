@@ -1,5 +1,6 @@
 
 # Requests
+Alle Requests behalve login en sonar vereisen een Authorization header met de token die je krijgt van de login
 
 ## Auth
 ```
