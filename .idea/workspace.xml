@@ -1,10 +1,151 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="53d5e522-7c81-4790-969b-b426e692f986" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+    <list default="true" id="53d5e522-7c81-4790-969b-b426e692f986" name="Default" comment="java doc">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/allclasses-frame.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/allclasses-noframe.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/constant-values.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/deprecated-list.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/gcm/GCMMessage.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/gcm/GCMPoster.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/gcm/class-use/GCMMessage.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/gcm/class-use/GCMPoster.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/gcm/package-frame.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/gcm/package-summary.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/gcm/package-tree.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/gcm/package-use.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/help-doc.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/index-files/index-1.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/index-files/index-10.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/index-files/index-11.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/index-files/index-12.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/index-files/index-13.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/index-files/index-14.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/index-files/index-15.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/index-files/index-16.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/index-files/index-17.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/index-files/index-18.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/index-files/index-2.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/index-files/index-3.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/index-files/index-4.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/index-files/index-5.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/index-files/index-6.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/index-files/index-7.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/index-files/index-8.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/index-files/index-9.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/Application.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/class-use/Application.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/controllers/AuthController.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/controllers/ProjectController.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/controllers/RankingController.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/controllers/SonarController.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/controllers/UserController.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/controllers/class-use/AuthController.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/controllers/class-use/ProjectController.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/controllers/class-use/RankingController.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/controllers/class-use/SonarController.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/controllers/class-use/UserController.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/controllers/package-frame.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/controllers/package-summary.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/controllers/package-tree.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/controllers/package-use.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/entities/Achievement.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/entities/Commit.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/entities/Entity.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/entities/Issue.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/entities/Project.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/entities/Ranking.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/entities/Rule.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/entities/User.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/entities/class-use/Achievement.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/entities/class-use/Commit.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/entities/class-use/Entity.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/entities/class-use/Issue.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/entities/class-use/Project.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/entities/class-use/Ranking.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/entities/class-use/Rule.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/entities/class-use/User.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/entities/package-frame.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/entities/package-summary.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/entities/package-tree.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/entities/package-use.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/entities/relationships/CommittedBy.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/entities/relationships/CommittedTo.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/entities/relationships/ProjectMember.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/entities/relationships/class-use/CommittedBy.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/entities/relationships/class-use/CommittedTo.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/entities/relationships/class-use/ProjectMember.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/entities/relationships/package-frame.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/entities/relationships/package-summary.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/entities/relationships/package-tree.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/entities/relationships/package-use.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/factories/Neo4jSessionFactory.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/factories/class-use/Neo4jSessionFactory.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/factories/package-frame.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/factories/package-summary.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/factories/package-tree.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/factories/package-use.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/handlers/AchievementHandler.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/handlers/SonarReportHandler.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/handlers/class-use/AchievementHandler.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/handlers/class-use/SonarReportHandler.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/handlers/package-frame.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/handlers/package-summary.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/handlers/package-tree.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/handlers/package-use.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/package-frame.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/package-summary.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/package-tree.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/package-use.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/security/AuthToken.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/security/SecurityFilter.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/security/class-use/AuthToken.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/security/class-use/SecurityFilter.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/security/package-frame.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/security/package-summary.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/security/package-tree.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/security/package-use.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/services/AuthServiceImpl.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/services/CommitServiceImpl.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/services/GenericService.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/services/ProjectServiceImpl.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/services/Service.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/services/UserServiceImpl.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/services/class-use/AuthServiceImpl.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/services/class-use/CommitServiceImpl.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/services/class-use/GenericService.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/services/class-use/ProjectServiceImpl.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/services/class-use/Service.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/services/class-use/UserServiceImpl.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/services/interfaces/AuthService.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/services/interfaces/CommitService.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/services/interfaces/ProjectService.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/services/interfaces/UserService.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/services/interfaces/class-use/AuthService.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/services/interfaces/class-use/CommitService.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/services/interfaces/class-use/ProjectService.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/services/interfaces/class-use/UserService.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/services/interfaces/package-frame.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/services/interfaces/package-summary.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/services/interfaces/package-tree.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/services/interfaces/package-use.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/services/package-frame.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/services/package-summary.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/services/package-tree.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/nl/devgames/services/package-use.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/overview-frame.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/overview-summary.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/overview-tree.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/package-list" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/script.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/serialized-form.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/java_doc/stylesheet.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/ruleengine-0.1.0.jar.original" afterPath="$PROJECT_DIR$/target/ruleengine-0.1.0.jar.original" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/nl/devgames/handlers/SonarReportHandler.java" afterPath="$PROJECT_DIR$/src/main/java/nl/devgames/handlers/SonarReportHandler.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" />
     </list>
     <ignored path="gs-rest-service.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -27,16 +168,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="AuthToken.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/nl/devgames/security/AuthToken.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="AuthService.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/nl/devgames/services/interfaces/AuthService.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -116,7 +247,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SecurityFilter.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SecurityFilter.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/nl/devgames/security/SecurityFilter.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="187">
@@ -126,14 +257,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AchievementHandler.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/nl/devgames/handlers/AchievementHandler.java">
+      <file leaf-file-name="stylesheet.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/java_doc/stylesheet.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="561">
-              <caret line="54" column="19" selection-start-line="54" selection-start-column="19" selection-end-line="54" selection-end-column="19" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="85">
+              <caret line="5" column="35" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="35" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/java_doc/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -334,6 +473,42 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RuleEngine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RuleEngine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RuleEngine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RuleEngine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java_doc" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -890,7 +1065,7 @@
       <workItem from="1465729546503" duration="51000" />
       <workItem from="1465729687363" duration="3516000" />
       <workItem from="1465733726451" duration="197000" />
-      <workItem from="1465735618411" duration="1536000" />
+      <workItem from="1465735618411" duration="1693000" />
     </task>
     <task id="LOCAL-00001" summary="Ranking en Authtoken">
       <created>1464223788769</created>
@@ -983,29 +1158,37 @@
       <option name="project" value="LOCAL" />
       <updated>1465730006757</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Fixed merge issues">
+      <created>1465737200854</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1465737200854</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="107713000" />
+    <option name="totallyTimeSpent" value="107870000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3261105" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35341153" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32866243" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3409091" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34127843" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32792208" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20788912" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20788912" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1021,7 +1204,6 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13757962" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32611465" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Find using jQA DB" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
@@ -1052,7 +1234,8 @@
     <MESSAGE value="3 Achievements added" />
     <MESSAGE value="Achievements available by endpoint and fixed relationship bug and added the logout" />
     <MESSAGE value="Fixed merge issues" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed merge issues" />
+    <MESSAGE value="java doc" />
+    <option name="LAST_COMMIT_MESSAGE" value="java doc" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1073,21 +1256,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/nl/devgames/entities/Project.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="17" column="4" selection-start-line="17" selection-start-column="4" selection-end-line="18" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/nl/devgames/entities/Commit.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="60" column="0" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/nl/devgames/entities/User.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1467,6 +1635,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="14" column="65" selection-start-line="14" selection-start-column="65" selection-end-line="14" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/java_doc/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/java_doc/stylesheet.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="35" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="35" />
           <folding />
         </state>
       </provider>
