@@ -46,6 +46,7 @@ public class SonarReportHandler {
         Project project = createOrUpdateProject(projectName,user);
         Set<Issue> currentIssues = compareIssues(project.getIssues(),issues);
         metricsToPointsAndSaveToUserAndProject(metrics, currentIssues, project, user);
+        new AchievementHandler().handleAchievements(user);
     }
 
     private Long metricsToPointsAndSaveToUserAndProject(JSONArray metrics,Set<Issue> issues,Project project,User user) throws JSONException {

@@ -120,4 +120,8 @@ public class User extends Entity {
     public void setAchievements(Set<Achievement> achievements) {
         this.achievements = achievements;
     }
+
+    public void addAchievements(Achievement achievement) {
+        this.achievements.add(achievement);
+    }
 }
