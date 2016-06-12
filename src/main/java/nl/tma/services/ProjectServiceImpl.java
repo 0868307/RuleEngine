@@ -1,13 +1,11 @@
 package nl.tma.services;
 
 import nl.tma.entities.Project;
-import nl.tma.entities.User;
 import nl.tma.factories.Neo4jSessionFactory;
 import nl.tma.services.interfaces.ProjectService;
 import org.neo4j.ogm.cypher.Filter;
 
 import java.util.Iterator;
-import java.util.Set;
 
 /**
  * Created by Wouter on 3/5/2016.
