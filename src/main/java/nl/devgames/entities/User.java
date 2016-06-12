@@ -17,14 +17,14 @@ public class User extends Entity {
     private String githubUsername;
     private long points;
     private String password;
-    private Long linesWritten;
-    private Long linesCommented;
-    private Long duplicationLinesWritten;
-    private Long duplicationBlocksWritten;
-    private Long duplicationFilesWritten;
-    private Double debtCreated;
+    private long linesWritten;
+    private long linesCommented;
+    private long duplicationLinesWritten;
+    private long duplicationBlocksWritten;
+    private long duplicationFilesWritten;
+    private double debtCreated;
 
-    List<Achievement> achievements;
+    Set<Achievement> achievements;
 
     public User() {
     }
@@ -32,6 +32,7 @@ public class User extends Entity {
     public User(Long id) {
         super(id);
     }
+
     public String getUsername() {
         return username;
     }
@@ -56,59 +57,67 @@ public class User extends Entity {
         this.points = points;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
     public String getPassword() {
         return password;
     }
 
-    public Long getLinesWritten() {
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public long getLinesWritten() {
         return linesWritten;
     }
 
-    public void setLinesWritten(Long linesWritten) {
+    public void setLinesWritten(long linesWritten) {
         this.linesWritten = linesWritten;
     }
 
-    public Long getLinesCommented() {
+    public long getLinesCommented() {
         return linesCommented;
     }
 
-    public void setLinesCommented(Long linesCommented) {
+    public void setLinesCommented(long linesCommented) {
         this.linesCommented = linesCommented;
     }
 
-    public Long getDuplicationLinesWritten() {
+    public long getDuplicationLinesWritten() {
         return duplicationLinesWritten;
     }
 
-    public void setDuplicationLinesWritten(Long duplicationLinesWritten) {
+    public void setDuplicationLinesWritten(long duplicationLinesWritten) {
         this.duplicationLinesWritten = duplicationLinesWritten;
     }
 
-    public Long getDuplicationBlocksWritten() {
+    public long getDuplicationBlocksWritten() {
         return duplicationBlocksWritten;
     }
 
-    public void setDuplicationBlocksWritten(Long duplicationBlocksWritten) {
+    public void setDuplicationBlocksWritten(long duplicationBlocksWritten) {
         this.duplicationBlocksWritten = duplicationBlocksWritten;
     }
 
-    public Long getDuplicationFilesWritten() {
+    public long getDuplicationFilesWritten() {
         return duplicationFilesWritten;
     }
 
-    public void setDuplicationFilesWritten(Long duplicationFilesWritten) {
+    public void setDuplicationFilesWritten(long duplicationFilesWritten) {
         this.duplicationFilesWritten = duplicationFilesWritten;
     }
 
-    public Double getDebtCreated() {
+    public double getDebtCreated() {
         return debtCreated;
     }
 
-    public void setDebtCreated(Double debtCreated) {
+    public void setDebtCreated(double debtCreated) {
         this.debtCreated = debtCreated;
+    }
+
+    public Set<Achievement> getAchievements() {
+        return achievements;
+    }
+
+    public void setAchievements(Set<Achievement> achievements) {
+        this.achievements = achievements;
     }
 }

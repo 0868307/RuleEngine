@@ -1,6 +1,6 @@
 package nl.devgames.handlers;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.gson.Gson;
 import nl.devgames.entities.Issue;
 import nl.devgames.entities.Project;
 import nl.devgames.entities.User;
@@ -11,8 +11,6 @@ import nl.devgames.services.interfaces.UserService;
 import org.neo4j.ogm.json.JSONArray;
 import org.neo4j.ogm.json.JSONException;
 import org.neo4j.ogm.json.JSONObject;
-
-import java.io.IOException;
 import java.util.*;
 
 /**
@@ -42,52 +40,107 @@ public class SonarReportHandler {
         String projectName = jsonObject.getJSONArray("user").getJSONObject(0).getString("project");
         name = name.replaceAll("\\s+","_");
         JSONObject report = jsonObject.getJSONObject("report");
-        JSONArray metrics = getMetricsFromReport(report);
+        JSONArray metrics = getMetricsFromReport(jsonObject);
         JSONArray jsonIssues = report.getJSONArray("issues");
         Set<Issue> issues = convertJsonToIssues(jsonIssues);
         User user = createOrUpdateUser(name);
         Project project = createOrUpdateProject(projectName,user);
         Set<Issue> currentIssues = compareIssues(project.getIssues(),issues);
         project.setIssues(currentIssues);
-        calculatePointsAndUpdateUser(metrics, currentIssues, project, user);
+        metricsToPointsAndSaveToUser(metrics, currentIssues, project, user);
         ProjectService projectService = new ProjectServiceImpl();
         projectService.save(project);
     }
 
-    private Long calculatePointsAndUpdateUser(JSONArray metrics,Set<Issue> issues,Project project,User user) throws JSONException {
-        metricsToPointsAndSaveToUser(metrics,project,user);
-        issuesToPoints(issues);
-        return null;
-    }
-
-    private Long metricsToPointsAndSaveToUser(JSONArray metrics,Project project,User user) throws JSONException {
+    private Long metricsToPointsAndSaveToUser(JSONArray metrics,Set<Issue> issues,Project project,User user) throws JSONException {
         long points = 0;
+        Map<String,Object> metricsAsMap = new HashMap<>();
         for (int metricIndex = 0; metricIndex < metrics.length(); metricIndex++) {
             JSONObject current = metrics.getJSONObject(metricIndex);
             String value = current.getString("val");
-            switch (current.getString("key")){
+            String key = current.getString("key");
+            if(value.contains(".")){
+                value = (long)Double.parseDouble(value)+"";
+            }
+            switch (key){
                 case METRICS_KEY_LINES:
-                    user.setLinesWritten(user.getLinesWritten() + (project.getLines() - Long.parseLong(value)));
+                    long lines = project.getLines() - Long.parseLong(value);
+                    metricsAsMap.put(key,lines);
+                    user.setLinesWritten(user.getLinesWritten() + lines);
                     break;
                 case METRICS_KEY_LINES_COMMENTED:
-                    user.setLinesCommented(user.getLinesCommented() + (project.getLinesCommented() - Long.parseLong(value)));
+                    lines = project.getLinesCommented() - Long.parseLong(value);
+                    metricsAsMap.put(key,lines);
+                    user.setLinesCommented(user.getLinesCommented() + lines);
                     break;
                 case METRICS_KEY_DUPLICATION_LINES:
-                    user.setDuplicationLinesWritten(user.getDuplicationLinesWritten() + (project.getDuplicationLines() - Long.parseLong(value)));
-                    break;
-                case METRICS_KEY_DUPLICATION_LINES_DENSITY:
-                    Double.parseDouble(value);
+                    long duplications = project.getDuplicationLines() - Long.parseLong(value);
+                    metricsAsMap.put(key,duplications);
+                    user.setDuplicationLinesWritten(user.getDuplicationLinesWritten() + duplications);
                     break;
                 case METRICS_KEY_DUPLICATION_BLOCKS:
-                    user.setDuplicationBlocksWritten(user.getDuplicationBlocksWritten() + (project.getDuplicationBlocks() - Long.parseLong(value)));
+                    duplications = project.getDuplicationBlocks() - Long.parseLong(value);
+                    metricsAsMap.put(key,duplications);
+                    user.setDuplicationBlocksWritten(user.getDuplicationBlocksWritten() + duplications);
                     break;
                 case METRICS_KEY_DUPLICATION_FILES:
-                    user.setDuplicationFilesWritten(user.getDuplicationFilesWritten() + (project.getDuplicationFiles() - Long.parseLong(value)));
+                    duplications = project.getDuplicationFiles() - Long.parseLong(value);
+                    metricsAsMap.put(key,duplications);
+                    user.setDuplicationFilesWritten(user.getDuplicationFilesWritten() + duplications);
                     break;
                 case METRICS_KEY_DEBT:
-                    user.setDebtCreated(user.getDebtCreated() + (project.getDebt() - Double.parseDouble(value)));
+                    double debtCreated = project.getDebt() - Double.parseDouble(value);
+                    metricsAsMap.put(key,debtCreated);
+                    user.setDebtCreated(user.getDebtCreated() + debtCreated);
+                    break;
+                default:
                     break;
             }
+        }
+        points += metricsToPoints(metricsAsMap,issues);
+        savePointsToUser(user,points);
+        return points;
+    }
+
+    private User savePointsToUser(User user, long points) {
+        UserService userService = new UserServiceImpl();
+        user.setPoints(points);
+        userService.save(user);
+        return user;
+    }
+
+    private long metricsToPoints(Map<String, Object> metricsAsMap, Set<Issue> issues) throws JSONException {
+        long points = 0;
+        points += LinesAndDuplicationsToPoints(metricsAsMap);
+        double debt = 0;
+        if(metricsAsMap.containsKey(METRICS_KEY_DEBT)){
+            debt = (double)metricsAsMap.get(METRICS_KEY_DEBT);
+        }
+        points += issuesToPoints(issues,debt);
+        return points;
+    }
+
+    // calculate the "effective" lines added and use it as points
+    private long LinesAndDuplicationsToPoints(Map<String, Object> metricsAsMap) {
+        long points = 0;
+        if(metricsAsMap.containsKey(METRICS_KEY_LINES)){
+            long lines = (Long)metricsAsMap.get(METRICS_KEY_LINES);
+            long duplications = 0;
+            if(metricsAsMap.containsKey(METRICS_KEY_DUPLICATION_BLOCKS)){
+                duplications += (Long)metricsAsMap.get(METRICS_KEY_DUPLICATION_BLOCKS);
+            }
+            if(metricsAsMap.containsKey(METRICS_KEY_DUPLICATION_LINES)){
+                duplications += (Long)metricsAsMap.get(METRICS_KEY_DUPLICATION_LINES);
+            }
+            if(metricsAsMap.containsKey(METRICS_KEY_DUPLICATION_FILES)){
+                duplications += (Long)metricsAsMap.get(METRICS_KEY_DUPLICATION_FILES);
+            }
+            if(duplications > 0) {
+                points += lines/duplications;
+            }else{
+                points +=lines;
+            }
+
         }
         return points;
     }
@@ -96,18 +149,16 @@ public class SonarReportHandler {
         Set<Issue> issues = new HashSet<>();
         for (int issueIndex = 0; issueIndex < jsonIssues.length(); issueIndex++) {
             Issue issue;
-            try {
-                issue = new ObjectMapper().readValue(jsonIssues.getString(issueIndex),Issue.class);
-                issues.add(issue);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            Gson gson = new Gson();
+            issue = gson.fromJson(jsonIssues.getString(issueIndex), Issue.class);
+            issues.add(issue);
+
         }
         return issues;
     }
-    private JSONArray getMetricsFromReport(JSONObject report) throws JSONException {
+    private JSONArray getMetricsFromReport(JSONObject jsonInput) throws JSONException {
         Map<String,Double> metrics = new HashMap<>();
-        JSONArray parent = report.getJSONArray("metrics");
+        JSONArray parent = jsonInput.getJSONArray("metrics");
         JSONObject sonarProject = parent.getJSONObject(0);
         JSONArray metricsAsArray = sonarProject.getJSONArray("msr");
         return metricsAsArray;
@@ -115,49 +166,54 @@ public class SonarReportHandler {
     // returns all new and resolved issues
     private Set<Issue> compareIssues(Set<Issue> oldIssues,Set<Issue> newIssues){
         Set<Issue> issues = new HashSet<>();
-        for(Issue oldIssue : oldIssues){
-            // the old resolved issues aren't relevant anymore for the calculations
-            if(oldIssue.getStatus().equals(ISSUE_STATUS_CLOSED)){
-                oldIssues.remove(oldIssue);
-                continue;
-            }
-            for(Issue newIssue : newIssues){
-                if(oldIssue.getComponent().equals(newIssue.getComponent()) &&
-                        oldIssue.getSeverity().equals(newIssue.getSeverity()) &&
-                        oldIssue.getRule().equals(newIssue.getRule()) &&
-                        oldIssue.getMessage().equals(newIssue.getMessage())){
-                    newIssue.setNew(false);
-                    issues.add(newIssue);
-                    newIssues.remove(newIssue);
+        if(oldIssues != null){
+            for(Issue oldIssue : oldIssues){
+                // the old resolved issues aren't relevant anymore for the calculations
+                if(oldIssue.getStatus().equals(ISSUE_STATUS_CLOSED)){
                     oldIssues.remove(oldIssue);
-                    break;
+                    continue;
                 }
+                for(Issue newIssue : newIssues){
+                    if(oldIssue.getComponent().equals(newIssue.getComponent()) &&
+                            oldIssue.getSeverity().equals(newIssue.getSeverity()) &&
+                            oldIssue.getRule().equals(newIssue.getRule()) &&
+                            oldIssue.getMessage().equals(newIssue.getMessage())){
+                        newIssue.setNew(false);
+                        issues.add(newIssue);
+                        newIssues.remove(newIssue);
+                        oldIssues.remove(oldIssue);
+                        break;
+                    }
+                }
+            }
+            // before we removed all the issues that are still in the new version from oldIssues so all that is left is the resolved issues
+            for(Issue oldIssue: oldIssues){
+                oldIssue.setStatus(ISSUE_STATUS_CLOSED);
+                issues.add(oldIssue);
             }
         }
         // before we removed all the issues that were in the old version from newIssues so the ones left are the new issues
         for(Issue newIssue : newIssues){
             issues.add(newIssue);
         }
-        // before we removed all the issues that are still in the new version from oldIssues so all that is left is the resolved issues
-        for(Issue oldIssue: oldIssues){
-            oldIssue.setStatus(ISSUE_STATUS_CLOSED);
-            issues.add(oldIssue);
-        }
         return issues;
     }
 
     /**
-     * points based on the severity and amount of same mistakes
+     * points based on the severity and amount of same mistakes and the debt created this commit
      * @param issues
      * @return
      * @throws JSONException
      */
-    private Long issuesToPoints(Set<Issue> issues) throws JSONException {
+    private Long issuesToPoints(Set<Issue> issues,double debt) throws JSONException {
         long points = 0;
-        Map<String,Integer> ruleMultiplier = new HashMap<String,Integer>();
+        Map<String,Integer> ruleMultiplierMap = new HashMap<String,Integer>();
         for(Issue issue : issues){
-            int currentCount = ruleMultiplier.get(issue.getRule());
-            ruleMultiplier.replace(issue.getRule(),++currentCount);
+            int currentCount = 0;
+            if(ruleMultiplierMap.containsKey(issue.getRule())){
+                currentCount = ruleMultiplierMap.get(issue.getRule());
+            }
+            ruleMultiplierMap.replace(issue.getRule(), ++currentCount);
         }
         for (Issue issue : issues) {
             String severity = issue.getSeverity();
@@ -169,11 +225,17 @@ public class SonarReportHandler {
             }else if(severity.equals(ISSUE_LEVEL_CRITICAL)){
                 tempPoints += 10;
             }
+            long ruleMultiplier = 1;
+            if(ruleMultiplierMap.containsKey(issue.getRule())){
+                ruleMultiplier = (1 + ruleMultiplierMap.get(issue.getRule()) / 10);
+            }
+            long debtMultiplier = (long)(1+ debt/10);
+            tempPoints = tempPoints * ruleMultiplier * debtMultiplier;
             if(issue.getStatus().equals(ISSUE_STATUS_CLOSED)){
-                points += tempPoints * (1 + ruleMultiplier.get(issue.getRule()) / 10);
+                points += tempPoints;
             }else{
                 if(issue.isNew()){
-                    points -= tempPoints * (1 + ruleMultiplier.get(issue.getRule()) / 10);
+                    points -= tempPoints;
                 }
             }
         }

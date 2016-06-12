@@ -22,13 +22,13 @@ public class Project extends Entity {
     @Relationship(type = "PROJECT_MEMBER")
     Set<User> projectMembers;
 
-    private Long lines;
-    private Long linesCommented;
-    private Long duplicationLines;
-    private Long duplicationBlocks;
-    private Long duplicationFiles;
-    private Double duplicationLinesDensity;
-    private Double debt;
+    private long lines;
+    private long linesCommented;
+    private long duplicationLines;
+    private long duplicationBlocks;
+    private long duplicationFiles;
+    private double duplicationLinesDensity;
+    private double debt;
 
 
     public Project() {
@@ -68,59 +68,59 @@ public class Project extends Entity {
         this.issues = issues;
     }
 
-    public Long getLines() {
+    public long getLines() {
         return lines;
     }
 
-    public void setLines(Long lines) {
+    public void setLines(long lines) {
         this.lines = lines;
     }
 
-    public Long getLinesCommented() {
+    public long getLinesCommented() {
         return linesCommented;
     }
 
-    public void setLinesCommented(Long linesCommented) {
+    public void setLinesCommented(long linesCommented) {
         this.linesCommented = linesCommented;
     }
 
-    public Long getDuplicationLines() {
+    public long getDuplicationLines() {
         return duplicationLines;
     }
 
-    public void setDuplicationLines(Long duplicationLines) {
+    public void setDuplicationLines(long duplicationLines) {
         this.duplicationLines = duplicationLines;
     }
 
-    public Double getDuplicationLinesDensity() {
-        return duplicationLinesDensity;
-    }
-
-    public void setDuplicationLinesDensity(Double duplicationLinesDensity) {
-        this.duplicationLinesDensity = duplicationLinesDensity;
-    }
-
-    public Long getDuplicationBlocks() {
+    public long getDuplicationBlocks() {
         return duplicationBlocks;
     }
 
-    public void setDuplicationBlocks(Long duplicationBlocks) {
+    public void setDuplicationBlocks(long duplicationBlocks) {
         this.duplicationBlocks = duplicationBlocks;
     }
 
-    public Long getDuplicationFiles() {
+    public long getDuplicationFiles() {
         return duplicationFiles;
     }
 
-    public void setDuplicationFiles(Long duplicationFiles) {
+    public void setDuplicationFiles(long duplicationFiles) {
         this.duplicationFiles = duplicationFiles;
     }
 
-    public Double getDebt() {
+    public double getDuplicationLinesDensity() {
+        return duplicationLinesDensity;
+    }
+
+    public void setDuplicationLinesDensity(double duplicationLinesDensity) {
+        this.duplicationLinesDensity = duplicationLinesDensity;
+    }
+
+    public double getDebt() {
         return debt;
     }
 
-    public void setDebt(Double debt) {
+    public void setDebt(double debt) {
         this.debt = debt;
     }
 }

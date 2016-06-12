@@ -6,6 +6,7 @@ nl\devgames\entities\Ranking.class
 nl\devgames\controllers\UserController.class
 nl\devgames\services\ProjectServiceImpl.class
 nl\devgames\services\UserServiceImpl.class
+nl\devgames\entities\Achievement.class
 nl\devgames\services\CommitServiceImpl.class
 nl\devgames\services\interfaces\CommitService.class
 nl\devgames\controllers\RankingController.class
@@ -30,3 +31,4 @@ nl\devgames\services\interfaces\AuthService.class
 nl\devgames\handlers\SonarReportHandler.class
 nl\devgames\controllers\SonarController.class
 nl\devgames\entities\relationships\ProjectMember.class
+nl\devgames\handlers\AchievementHandler.class

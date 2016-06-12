@@ -5,7 +5,7 @@ package nl.devgames.entities;
  */
 public class Ranking {
     private String username;
-    private Long points;
+    private long points;
 
     public Ranking(String username, Long points) {
         this.username = username;
