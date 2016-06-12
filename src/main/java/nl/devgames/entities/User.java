@@ -20,7 +20,6 @@ public class User extends Entity {
     private long duplicationBlocksWritten;
     private long duplicationFilesWritten;
     private double debtCreated;
-    private long dateTime;
 
 
     @Relationship(type = "ACHIEVEMENT_OF")
@@ -126,13 +125,5 @@ public class User extends Entity {
             this.achievements = new HashSet<>();
         }
         this.achievements.add(achievement);
-    }
-
-    public long getDate() {
-        return dateTime;
-    }
-
-    public void setDate(long dateTime) {
-        this.dateTime = dateTime;
     }
 }

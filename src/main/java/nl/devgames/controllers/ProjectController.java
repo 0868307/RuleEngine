@@ -30,7 +30,7 @@ public class ProjectController {
         return project;
     }
     @RequestMapping(value = "/projects",method = RequestMethod.GET)
-    public Set<Project> getProjectsOfUser(@RequestHeader(value = "Authorization") String authToken) {
+    public Set<Project> getProjectsOfUser(@RequestHeader(SecurityFilter.AUTHTOKEN) String authToken) {
         String username = AuthToken.getUsernameFromToken(authToken);
         UserService userService = new UserServiceImpl();
         User user = userService.findUserByUsername(username);

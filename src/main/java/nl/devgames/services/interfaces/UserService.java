@@ -1,7 +1,6 @@
 package nl.devgames.services.interfaces;
 
 import nl.devgames.entities.Commit;
-import nl.devgames.entities.PastCommits;
 import nl.devgames.entities.Project;
 import nl.devgames.entities.User;
 
@@ -21,5 +20,4 @@ public interface UserService {
     public Set<User> getAllUsers();
 
     public void save(User user);
-
 }
