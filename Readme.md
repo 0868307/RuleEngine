@@ -1,62 +1,53 @@
 
-== Requests
+# Requests
 
-Deze requests kan je allemaal doen
-
-(nog niet functioneel)
-== GET
+## GET
 ----
-http://localhost:8080/login
+/login
 ----
-== Description
+### Description
 ----
 Geeft een authtoken terug
 ----
-(nog niet functioneel)
-== GET
+## GET
 ----
-http://localhost:8080/whoami
+/whoami
 ----
-== Description
+### Description
 ----
 Geeft alle gegevens van de huidige user terug
 ----
-(nog niet functioneel)
-== GET
+## GET
 ----
-http://localhost:8080/user/{uuid}
+/user/{uuid}
 ----
-== Description
+### Description
 ----
 geeft de gegevens van een user op met {uuid}
 ----
 (nog niet functioneel)
-== GET
+## GET
 ----
-http://localhost:8080/projects/{uuid}
+/projects/{uuid}
 ----
 
-== Parameters
+### Parameters
 ----
 from (epoch)
 to (epoch)
 ----
-== Description
+### Description
 ----
 geeft de projecten van een user op met {uuid}
 ----
-(nog niet functioneel)
-== GET
+
+## POST
 ----
-http://localhost:8080/commits/{uuid}
+/sonar
 ----
-== Parameters:
+
+### Description
 ----
-from (epoch)
-to (epoch)
-----
-== Description:
-----
-geeft de commits van een user op met {uuid}
+Bedoeld voor Jenkins om zijn antwoord naar te sturen
 ----
 
