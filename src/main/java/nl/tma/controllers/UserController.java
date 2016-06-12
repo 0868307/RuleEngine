@@ -17,8 +17,8 @@ public class UserController {
         return AuthToken.getUsernameFromToken(authToken);
     }
     @RequestMapping(value = "/user/{uuid}",method = RequestMethod.GET)
-    public User getUserById(@PathVariable Long uuid, @RequestHeader(value = SecurityFilter.AUTHORIZATION) String auth_token) {
-        if (AuthToken.checkToken(auth_token) == true) {
+    public User getUserById(@PathVariable Long uuid, @RequestHeader(value = SecurityFilter.AUTHORIZATION) String authToken) {
+        if (AuthToken.checkToken(authToken)) {
             return new UserServiceImpl().find(uuid);
         } else{
             return null;
