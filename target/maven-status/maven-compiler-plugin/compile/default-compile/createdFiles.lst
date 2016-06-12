@@ -26,6 +26,7 @@ nl\devgames\entities\User.class
 nl\devgames\security\SecurityFilter.class
 nl\devgames\entities\relationships\CommittedTo.class
 gcm\GCMMessage.class
+nl\devgames\handlers\ReportProcessor.class
 nl\devgames\security\AuthToken.class
 nl\devgames\services\interfaces\AuthService.class
 nl\devgames\handlers\SonarReportHandler.class

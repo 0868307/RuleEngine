@@ -49,8 +49,8 @@ var activeTableTab = "activeTableTab";
 </div>
 <div class="subNav">
 <ul class="navList">
-<li><a href="../../../nl/devgames/controllers/AuthController.html" title="class in nl.devgames.controllers"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
-<li><a href="../../../nl/devgames/controllers/RankingController.html" title="class in nl.devgames.controllers"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+<li><a href="../../../nl/devgames/controllers/AuthController.html" title="class in nl.tma.controllers"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../nl/devgames/controllers/RankingController.html" title="class in nl.tma.controllers"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
 </ul>
 <ul class="navList">
 <li><a href="../../../index.html?nl/devgames/controllers/ProjectController.html" target="_top">Frames</a></li>
@@ -92,7 +92,7 @@ var activeTableTab = "activeTableTab";
 <!-- ========= END OF TOP NAVBAR ========= -->
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
-<div class="subTitle">nl.devgames.controllers</div>
+<div class="subTitle">nl.tma.controllers</div>
 <h2 title="Class ProjectController" class="title">Class ProjectController</h2>
 </div>
 <div class="contentContainer">
@@ -100,7 +100,7 @@ var activeTableTab = "activeTableTab";
 <li>java.lang.Object</li>
 <li>
 <ul class="inheritance">
-<li>nl.devgames.controllers.ProjectController</li>
+<li>nl.tma.controllers.ProjectController</li>
 </ul>
 </li>
 </ul>
@@ -149,19 +149,19 @@ extends java.lang.Object</pre>
 <th class="colLast" scope="col">Method and Description</th>
 </tr>
 <tr id="i0" class="altColor">
-<td class="colFirst"><code><a href="../../../nl/devgames/entities/Project.html" title="class in nl.devgames.entities">Project</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../nl/devgames/controllers/ProjectController.html#addUserToProject-nl.devgames.entities.relationships.ProjectMember-">addUserToProject</a></span>(<a href="../../../nl/devgames/entities/relationships/ProjectMember.html" title="class in nl.devgames.entities.relationships">ProjectMember</a>&nbsp;projectMember)</code>&nbsp;</td>
+<td class="colFirst"><code><a href="../../../nl/devgames/entities/Project.html" title="class in nl.tma.entities">Project</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../nl/devgames/controllers/ProjectController.html#addUserToProject-nl.devgames.entities.relationships.ProjectMember-">addUserToProject</a></span>(<a href="../../../nl/devgames/entities/relationships/ProjectMember.html" title="class in nl.tma.entities.relationships">ProjectMember</a>&nbsp;projectMember)</code>&nbsp;</td>
 </tr>
 <tr id="i1" class="rowColor">
-<td class="colFirst"><code><a href="../../../nl/devgames/entities/Project.html" title="class in nl.devgames.entities">Project</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../nl/devgames/controllers/ProjectController.html#createNewProject-nl.devgames.entities.Project-">createNewProject</a></span>(<a href="../../../nl/devgames/entities/Project.html" title="class in nl.devgames.entities">Project</a>&nbsp;project)</code>&nbsp;</td>
+<td class="colFirst"><code><a href="../../../nl/devgames/entities/Project.html" title="class in nl.tma.entities">Project</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../nl/devgames/controllers/ProjectController.html#createNewProject-nl.devgames.entities.Project-">createNewProject</a></span>(<a href="../../../nl/devgames/entities/Project.html" title="class in nl.tma.entities">Project</a>&nbsp;project)</code>&nbsp;</td>
 </tr>
 <tr id="i2" class="altColor">
-<td class="colFirst"><code><a href="../../../nl/devgames/entities/Project.html" title="class in nl.devgames.entities">Project</a></code></td>
+<td class="colFirst"><code><a href="../../../nl/devgames/entities/Project.html" title="class in nl.tma.entities">Project</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../nl/devgames/controllers/ProjectController.html#getProjectById-java.lang.Long-">getProjectById</a></span>(java.lang.Long&nbsp;uuid)</code>&nbsp;</td>
 </tr>
 <tr id="i3" class="rowColor">
-<td class="colFirst"><code>java.util.Set&lt;<a href="../../../nl/devgames/entities/Project.html" title="class in nl.devgames.entities">Project</a>&gt;</code></td>
+<td class="colFirst"><code>java.util.Set&lt;<a href="../../../nl/devgames/entities/Project.html" title="class in nl.tma.entities">Project</a>&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../nl/devgames/controllers/ProjectController.html#getProjectsOfUser-java.lang.String-">getProjectsOfUser</a></span>(java.lang.String&nbsp;authToken)</code>&nbsp;</td>
 </tr>
 </table>
@@ -211,7 +211,7 @@ extends java.lang.Object</pre>
 <h4>getProjectById</h4>
 <pre>@RequestMapping(value="/projects/{uuid}",
                 method=GET)
-public&nbsp;<a href="../../../nl/devgames/entities/Project.html" title="class in nl.devgames.entities">Project</a>&nbsp;getProjectById(@PathVariable
+public&nbsp;<a href="../../../nl/devgames/entities/Project.html" title="class in nl.tma.entities">Project</a>&nbsp;getProjectById(@PathVariable
                                                                                                       java.lang.Long&nbsp;uuid)</pre>
 </li>
 </ul>
@@ -223,8 +223,8 @@ public&nbsp;<a href="../../../nl/devgames/entities/Project.html" title="class in
 <h4>createNewProject</h4>
 <pre>@RequestMapping(value="/projects",
                 method=POST)
-public&nbsp;<a href="../../../nl/devgames/entities/Project.html" title="class in nl.devgames.entities">Project</a>&nbsp;createNewProject(@RequestBody
-                                                                                                  <a href="../../../nl/devgames/entities/Project.html" title="class in nl.devgames.entities">Project</a>&nbsp;project)</pre>
+public&nbsp;<a href="../../../nl/devgames/entities/Project.html" title="class in nl.tma.entities">Project</a>&nbsp;createNewProject(@RequestBody
+                                                                                                  <a href="../../../nl/devgames/entities/Project.html" title="class in nl.tma.entities">Project</a>&nbsp;project)</pre>
 </li>
 </ul>
 <a name="getProjectsOfUser-java.lang.String-">
@@ -235,7 +235,7 @@ public&nbsp;<a href="../../../nl/devgames/entities/Project.html" title="class in
 <h4>getProjectsOfUser</h4>
 <pre>@RequestMapping(value="/projects",
                 method=GET)
-public&nbsp;java.util.Set&lt;<a href="../../../nl/devgames/entities/Project.html" title="class in nl.devgames.entities">Project</a>&gt;&nbsp;getProjectsOfUser(@RequestHeader(value="")
+public&nbsp;java.util.Set&lt;<a href="../../../nl/devgames/entities/Project.html" title="class in nl.tma.entities">Project</a>&gt;&nbsp;getProjectsOfUser(@RequestHeader(value="")
                                                                                                                  java.lang.String&nbsp;authToken)</pre>
 </li>
 </ul>
@@ -247,8 +247,8 @@ public&nbsp;java.util.Set&lt;<a href="../../../nl/devgames/entities/Project.html
 <h4>addUserToProject</h4>
 <pre>@RequestMapping(value="/projects/addUser",
                 method=POST)
-public&nbsp;<a href="../../../nl/devgames/entities/Project.html" title="class in nl.devgames.entities">Project</a>&nbsp;addUserToProject(@RequestBody
-                                                                                                          <a href="../../../nl/devgames/entities/relationships/ProjectMember.html" title="class in nl.devgames.entities.relationships">ProjectMember</a>&nbsp;projectMember)</pre>
+public&nbsp;<a href="../../../nl/devgames/entities/Project.html" title="class in nl.tma.entities">Project</a>&nbsp;addUserToProject(@RequestBody
+                                                                                                          <a href="../../../nl/devgames/entities/relationships/ProjectMember.html" title="class in nl.tma.entities.relationships">ProjectMember</a>&nbsp;projectMember)</pre>
 </li>
 </ul>
 </li>
@@ -279,8 +279,8 @@ public&nbsp;<a href="../../../nl/devgames/entities/Project.html" title="class in
 </div>
 <div class="subNav">
 <ul class="navList">
-<li><a href="../../../nl/devgames/controllers/AuthController.html" title="class in nl.devgames.controllers"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
-<li><a href="../../../nl/devgames/controllers/RankingController.html" title="class in nl.devgames.controllers"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+<li><a href="../../../nl/devgames/controllers/AuthController.html" title="class in nl.tma.controllers"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../nl/devgames/controllers/RankingController.html" title="class in nl.tma.controllers"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
 </ul>
 <ul class="navList">
 <li><a href="../../../index.html?nl/devgames/controllers/ProjectController.html" target="_top">Frames</a></li>
