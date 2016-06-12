@@ -271,4 +271,5 @@ public class SonarReportHandler {
         projectService.save(project);
         return project;
     }
+
 }
