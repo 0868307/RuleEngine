@@ -1,6 +1,7 @@
 package nl.devgames.services;
 
 import nl.devgames.entities.Commit;
+import nl.devgames.entities.PastCommits;
 import nl.devgames.entities.Project;
 import nl.devgames.entities.User;
 import nl.devgames.factories.Neo4jSessionFactory;
@@ -89,5 +90,6 @@ public class UserServiceImpl extends GenericService<User> implements UserService
     @Override
     public void save(User user) {
         createOrUpdate(user);
+
     }
 }

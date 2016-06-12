@@ -1,8 +1,8 @@
 package nl.devgames.controllers;
 
 import nl.devgames.security.AuthToken;
+import nl.devgames.security.SecurityFilter;
 import nl.devgames.services.UserServiceImpl;
-import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -12,14 +12,16 @@ import org.springframework.web.bind.annotation.*;
  */
 @Controller
 public class AuthController {
-    //TODO: add Token class
+
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     @ResponseStatus(value= HttpStatus.OK)
     public @ResponseBody String login(@RequestParam(value="username") String username, @RequestParam(value="password") String password) {
 
         UserServiceImpl userService = new UserServiceImpl();
         if(userService.validateUser(username,password) == true){
-            return AuthToken.generate(username);
+            String a_token = AuthToken.generate(username);
+            SecurityFilter.auth_token = a_token;
+            return a_token;
         }else{
             throw new SecurityException("Incorrect login info");
         }

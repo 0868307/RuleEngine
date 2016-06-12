@@ -17,6 +17,7 @@ public class User extends Entity {
     private String githubUsername;
     private long points;
     private String password;
+    private long dateTime;
 
     public User() {
     }
@@ -55,4 +56,14 @@ public class User extends Entity {
     public String getPassword() {
         return password;
     }
+
+    public void setDate(long dateTime) {
+        this.dateTime = dateTime;
+    }
+
+    public double getDate() {
+        return dateTime;
+    }
+
+
 }
