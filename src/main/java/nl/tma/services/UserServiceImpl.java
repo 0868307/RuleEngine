@@ -34,7 +34,7 @@ public class UserServiceImpl extends GenericService<User> implements UserService
     @Override
     public Set<Project> findAllProjectsOfUser(Long id) {
         String query = "MATCH (u:" + getEntityType().getSimpleName() + ")<-[r:PROJECT_MEMBER]-(p:Project) WHERE id(u) = "+ id +" RETURN p";
-        Iterable<Map<String,Object>> maps = Neo4jSessionFactory.getInstance().getNeo4jSession().query(query, Collections.EMPTY_MAP);
+        Iterable<Map<String,Object>> maps = Neo4jSessionFactory.getInstance().getNeo4jSession().query(query, Collections.emptyMap());
         Set<Project> returnList = new HashSet<>();
         Iterator iterator = maps.iterator();
         while(iterator.hasNext()){

@@ -19,11 +19,6 @@ public class ProjectServiceImpl extends GenericService<Project> implements Proje
     }
 
     @Override
-    public Set<User> getUsersOfProject(String project) {
-        return null;
-    }
-
-    @Override
     public Project findProjectByProjectName(String projectName) {
         Project project = null;
         Iterator iterator = Neo4jSessionFactory.getInstance().getNeo4jSession().loadAll(Project.class, new Filter("name", projectName)).iterator();
