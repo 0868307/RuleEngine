@@ -16,11 +16,13 @@ public class SonarController {
 
     private static final Logger logger = LoggerFactory.getLogger(Application.class);
     @RequestMapping(value = "/sonar",method = RequestMethod.POST)
-    public void saveSonarInfo(@RequestBody String jsonAsString) {
+    public boolean saveSonarInfo(@RequestBody String jsonAsString , @RequestHeader(value = "Authorization") String auth_token) {
         try {
              new SonarReportHandler().processSonarReport(jsonAsString);
+            return true;
         }catch (JSONException e) {
             e.printStackTrace();
+            return false;
         }
     }
 

@@ -3,6 +3,7 @@ package nl.devgames.security;
 import org.springframework.stereotype.Component;
 import java.io.IOException;
 import javax.servlet.*;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
@@ -10,21 +11,27 @@ import javax.servlet.http.HttpServletResponse;
  */
 @Component
 public class SecurityFilter implements Filter {
-    public static final String AUTHTOKEN = "Authorization";
+    public static String auth_token = "";
     @Override
     public void doFilter(ServletRequest req, ServletResponse res,
                          FilterChain chain) throws IOException, ServletException {
 
         HttpServletResponse response = (HttpServletResponse) res;
-        if(!authorize(response.getHeader(AUTHTOKEN))){
-            throw new SecurityException("Invalid token");
+        String path = ((HttpServletRequest) req).getRequestURI();
+        if (path.startsWith("/login") || path.startsWith("/sonar")) {
+            chain.doFilter(req, res);
+        }
+        else if (!authorize(auth_token)) {
+
+            throw new SecurityException(auth_token);
         }
         chain.doFilter(req, res);
+
+
+
     }
     public boolean authorize(String token){
-        //TODO enable auth
-        //return AuthToken.checkToken(token);
-        return true;
+        return AuthToken.checkToken(token);
     }
     @Override
     public void destroy() {}

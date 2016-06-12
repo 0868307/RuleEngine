@@ -20,7 +20,7 @@ public class AchievementHandler {
     public AchievementHandler() {
     }
     public void handleAchievements(User user){
-        boolean newAchievements =false;
+        boolean newAchievements = false;
         newAchievements = newAchievements || checkLines(user);
         newAchievements = newAchievements || checkComments(user);
         newAchievements = newAchievements || checkDuplications(user);
@@ -73,6 +73,6 @@ public class AchievementHandler {
     }
     private void saveUser(User user){
         UserService userService = new UserServiceImpl();
-        userService.save(user);
+
     }
 }

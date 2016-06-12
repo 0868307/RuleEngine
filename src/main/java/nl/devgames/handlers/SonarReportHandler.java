@@ -38,15 +38,21 @@ public class SonarReportHandler {
         String name = jsonObject.getJSONArray("user").getJSONObject(0).getString("naam");
         String projectName = jsonObject.getJSONArray("user").getJSONObject(0).getString("project");
         name = name.replaceAll("\\s+","_");
+        System.out.println("DIT DOET DIE NU WEL FFS WTF MAN GEKUT DE asdqweasdTIJD KLOTE GEZEIK1111wrsadfasf34234234111111");
         JSONObject report = jsonObject.getJSONObject("report");
         JSONArray metrics = getMetricsFromReport(jsonObject);
         JSONArray jsonIssues = report.getJSONArray("issues");
         Set<Issue> issues = convertJsonToIssues(jsonIssues);
+        System.out.println("DIT DOET DIE NU WEL FFS WTF MAN GEKUT DE HELE TIJD KLOTE GEZEIK111134234234111111");
         User user = createOrUpdateUser(name);
+        System.out.println("DIT DOET DIE NU WEL FFS WTF MAN GEKUT DE HELE TIJD KLOTE GEZEIK111123423412111111");
         Project project = createOrUpdateProject(projectName,user);
+        System.out.println("DIT DOET DIE NU WEL FFS WTF MAN GEKUT DE HELE TIJD KLOTE GEZEIK11122221111111");
         Set<Issue> currentIssues = compareIssues(project.getIssues(),issues);
         metricsToPointsAndSaveToUserAndProject(metrics, currentIssues, project, user);
+        System.out.println("DIT DOET DIE NU WEL FFS WTF MAN GEKUT DE HELE TIJD KLOTE GEZEIK1111111111");
         new AchievementHandler().handleAchievements(user);
+        System.out.println("DIT DOET DIE NU WEL FFS WTF MAN GEKUT DE HELE TIJD KLOTE GEZEIK");
     }
 
     private Long metricsToPointsAndSaveToUserAndProject(JSONArray metrics,Set<Issue> issues,Project project,User user) throws JSONException {

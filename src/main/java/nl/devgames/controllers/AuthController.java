@@ -18,6 +18,8 @@ public class AuthController {
     public @ResponseBody String login(@RequestParam(value="username") String username, @RequestParam(value="password") String password) {
         UserServiceImpl userService = new UserServiceImpl();
         if(userService.validateUser(username,password) == true){
+            String a_token = AuthToken.generate(username);
+            SecurityFilter.auth_token = a_token;
             return AuthToken.generate(username);
         }else{
             throw new SecurityException("Incorrect login info");
@@ -26,7 +28,7 @@ public class AuthController {
 
     @RequestMapping(value = "/logout", method = RequestMethod.GET)
     @ResponseStatus(value= HttpStatus.OK)
-    public void logout(@RequestHeader(SecurityFilter.AUTHTOKEN) String authToken){
+    public void logout(@RequestHeader(value = "Authorization") String authToken){
         AuthToken.invalidate(authToken);
     }
 }

@@ -16,16 +16,21 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 public class UserController {
     @RequestMapping("/whoami")
-    public String whoAmI(@RequestHeader(SecurityFilter.AUTHTOKEN) String authToken) {
+    public String whoAmI(@RequestHeader(value = "Authorization") String authToken) {
         return AuthToken.getUsernameFromToken(authToken);
     }
     @RequestMapping(value = "/user/{uuid}",method = RequestMethod.GET)
-    public User getUserById(@PathVariable Long uuid) {
-        return new UserServiceImpl().find(uuid);
+    public User getUserById(@PathVariable Long uuid, @RequestHeader(value = "Authorization") String auth_token) {
+        if (AuthToken.checkToken(auth_token) == true) {
+            return new UserServiceImpl().find(uuid);
+        } else{
+            return null;
+        }
     }
     @RequestMapping(value = "/user/{uuid}",method = RequestMethod.PUT)
-    public User updateUser(@PathVariable Long uuid,@RequestBody User user) {
-        if(user.getId() == uuid){
+    public User updateUser(@PathVariable Long uuid,@RequestBody User user,@RequestHeader(value="Authorization") String auth_token) {
+
+            if(user.getId() == uuid) {
             UserService userService = new UserServiceImpl();
             userService.save(user);
             return user;
@@ -33,17 +38,17 @@ public class UserController {
         return null;
     }
     @RequestMapping(value = "/user",method = RequestMethod.POST)
-    public User createNewUser(@RequestBody User user) {
+    public User createNewUser(@RequestBody User user, @RequestHeader(value = "Authorization") String authToken) {
         UserServiceImpl userService = new UserServiceImpl();
         return userService.createOrUpdate(user);
     }
     @RequestMapping(value = "/user/{uuid}/projects",method = RequestMethod.GET)
-    public Set<Project> createNewUser(@PathVariable Long uuid) {
+    public Set<Project> createNewUser(@PathVariable Long uuid, @RequestHeader(value = "Authorization") String authToken) {
         UserServiceImpl userService = new UserServiceImpl();
         return userService.findAllProjectsOfUser(uuid);
     }
     @RequestMapping(value = "/user/achievements", method = RequestMethod.GET)
-    public Set<Achievement> getAchievements(@RequestHeader(SecurityFilter.AUTHTOKEN) String authToken){
+    public Set<Achievement> getAchievements(@RequestHeader(value = "Authorization") String authToken){
         String username = AuthToken.getUsernameFromToken(authToken);
         UserService userService = new UserServiceImpl();
         User user = userService.findUserByUsername(username);

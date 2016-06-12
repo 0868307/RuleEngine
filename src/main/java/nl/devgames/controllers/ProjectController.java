@@ -19,25 +19,25 @@ import java.util.Set;
 @RestController
 public class ProjectController {
     @RequestMapping(value = "/projects/{uuid}",method = RequestMethod.GET)
-    public Project getProjectById(@PathVariable Long uuid) {
+    public Project getProjectById(@PathVariable Long uuid, @RequestParam(value="password") String password) {
         ProjectServiceImpl projectService = new ProjectServiceImpl();
         return projectService.find(uuid);
     }
     @RequestMapping(value = "/projects",method = RequestMethod.POST)
-    public Project createNewProject(@RequestBody Project project) {
+    public Project createNewProject(@RequestBody Project project, @RequestParam(value="password") String password) {
         ProjectServiceImpl projectService = new ProjectServiceImpl();
         projectService.createOrUpdate(project);
         return project;
     }
     @RequestMapping(value = "/projects",method = RequestMethod.GET)
-    public Set<Project> getProjectsOfUser(@RequestHeader(SecurityFilter.AUTHTOKEN) String authToken) {
+    public Set<Project> getProjectsOfUser(@RequestHeader(value = "Authorization") String authToken) {
         String username = AuthToken.getUsernameFromToken(authToken);
         UserService userService = new UserServiceImpl();
         User user = userService.findUserByUsername(username);
         return userService.findAllProjectsOfUser(user.getId());
     }
     @RequestMapping(value = "/projects/addUser",method = RequestMethod.POST)
-    public Project addUserToProject(@RequestBody ProjectMember projectMember) {
+    public Project addUserToProject(@RequestBody ProjectMember projectMember, @RequestParam(value="password") String password) {
         ProjectServiceImpl projectService = new ProjectServiceImpl();
         UserServiceImpl userService = new UserServiceImpl();
         Project project = projectService.find(projectMember.getProject().getId());
