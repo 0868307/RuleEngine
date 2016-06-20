@@ -1,7 +1,9 @@
 package nl.tma.controllers;
 
+import nl.tma.entities.Issue;
 import nl.tma.entities.Project;
 import nl.tma.entities.User;
+import nl.tma.entities.relationships.ProjectMember;
 import nl.tma.security.AuthToken;
 import nl.tma.security.SecurityFilter;
 import nl.tma.services.ProjectServiceImpl;
@@ -27,5 +29,17 @@ public class ProjectController {
         UserService userService = new UserServiceImpl();
         User user = userService.findUserByUsername(username);
         return userService.findAllProjectsOfUser(user.getId());
+    }
+    @RequestMapping(value = "/projects/{uuid}/issues",method = RequestMethod.GET)
+    public Set<Issue> getProjectIssuesByID(@PathVariable Long uuid) {
+        ProjectServiceImpl projectService = new ProjectServiceImpl();
+        Project project = projectService.find(uuid);
+        return project.getIssues();
+    }
+    @RequestMapping(value = "/projects/{uuid}/members",method = RequestMethod.GET)
+    public Set<ProjectMember> getProjectMembersByProjectId(@PathVariable Long uuid) {
+        ProjectServiceImpl projectService = new ProjectServiceImpl();
+        Project project = projectService.find(uuid);
+        return project.getProjectMembers();
     }
 }

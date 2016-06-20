@@ -1,5 +1,6 @@
 package nl.tma.entities;
 
+import nl.tma.entities.relationships.ProjectMember;
 import org.neo4j.ogm.annotation.NodeEntity;
 import org.neo4j.ogm.annotation.Relationship;
 
@@ -17,7 +18,7 @@ public class Project extends Entity {
     Set<Issue> issues;
 
     @Relationship(type = "PROJECT_MEMBER")
-    Set<User> projectMembers;
+    Set<ProjectMember> projectMembers;
 
     private long lines;
     private long linesCommented;
@@ -42,17 +43,18 @@ public class Project extends Entity {
         this.name = name;
     }
 
-    public Set<User> getProjectMembers() {
+    public Set<ProjectMember> getProjectMembers() {
         return projectMembers;
     }
 
-    public void setProjectMembers(Set<User> projectMembers) {
+    public void setProjectMembers(Set<ProjectMember> projectMembers) {
         this.projectMembers = projectMembers;
     }
-    public void addProjectMember(User projectMember){
+    public void addProjectMember(User user){
         if(projectMembers == null){
             projectMembers = new HashSet<>();
         }
+        ProjectMember projectMember = new ProjectMember(user,this,0);
         this.projectMembers.add(projectMember);
     }
 
@@ -113,5 +115,23 @@ public class Project extends Entity {
 
     public void setDebt(double debt) {
         this.debt = debt;
+    }
+
+    public ProjectMember getProjectMember(User user) {
+        if(projectMembers != null){
+            for(ProjectMember projectMember : projectMembers){
+                if(projectMember.getUser().equals(user)){
+                    return projectMember;
+                }
+            }
+        }
+        return null;
+    }
+
+    public void updateProjectMember(ProjectMember projectMember) {
+        if(projectMembers != null){
+            projectMembers.remove(projectMember);
+            projectMembers.add(projectMember);
+        }
     }
 }

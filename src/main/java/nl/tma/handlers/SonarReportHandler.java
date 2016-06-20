@@ -4,6 +4,7 @@ import com.google.gson.Gson;
 import nl.tma.entities.Issue;
 import nl.tma.entities.Project;
 import nl.tma.entities.User;
+import nl.tma.entities.relationships.ProjectMember;
 import nl.tma.services.ProjectServiceImpl;
 import nl.tma.services.UserServiceImpl;
 import nl.tma.services.interfaces.ProjectService;
@@ -131,6 +132,9 @@ public class SonarReportHandler implements ReportProcessor {
         project.setIssues(issues);
         points += metricsToPoints(metricsAsMap,issues);
         user.setPoints(user.getPoints() + points);
+        ProjectMember projectMember = project.getProjectMember(user);
+        projectMember.setPoints(projectMember.getPoints() + points);
+        project.updateProjectMember(projectMember);
         projectService.save(project);
         userService.save(user);
         return points;

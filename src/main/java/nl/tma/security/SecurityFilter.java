@@ -6,6 +6,8 @@ import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.Arrays;
+import java.util.Collection;
 
 /**
  * Created by Wouter on 4/17/2016.
@@ -16,10 +18,9 @@ public class SecurityFilter implements Filter {
     @Override
     public void doFilter(ServletRequest req, ServletResponse res,
                          FilterChain chain) throws IOException, ServletException {
-
-        HttpServletResponse response = (HttpServletResponse) res;
-        String authToken = response.getHeader(AUTHORIZATION);
+        String authToken = ((HttpServletRequest) req).getHeader(AUTHORIZATION);
         String path = ((HttpServletRequest) req).getRequestURI();
+        System.out.println("token = "+ authToken);
         if (path.startsWith("/login") || path.startsWith("/sonar")) {
             chain.doFilter(req, res);
         }

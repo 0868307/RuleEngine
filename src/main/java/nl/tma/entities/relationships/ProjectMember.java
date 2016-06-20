@@ -14,17 +14,20 @@ public class ProjectMember {
     private Long id;
 
     @StartNode
-    private User user;
+    private Project project;
 
     @EndNode
-    private Project project;
+    private User user;
+
+    private long points;
 
     public ProjectMember() {
     }
 
-    public ProjectMember(User user, Project project) {
+    public ProjectMember(User user, Project project,long points) {
         this.user = user;
         this.project = project;
+        this.points = points;
     }
 
     public Long getId() {
@@ -49,5 +52,13 @@ public class ProjectMember {
 
     public void setProject(Project project) {
         this.project = project;
+    }
+
+    public long getPoints() {
+        return points;
+    }
+
+    public void setPoints(long points) {
+        this.points = points;
     }
 }

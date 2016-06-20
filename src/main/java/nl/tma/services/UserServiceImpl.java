@@ -49,10 +49,13 @@ public class UserServiceImpl extends GenericService<User> implements UserService
     @Override
     public User findUserByUsername(String username) {
         User user = null;
-        Iterator iterator = Neo4jSessionFactory.getInstance().getNeo4jSession().loadAll(User.class, new Filter("username", username)).iterator();
-        while(iterator.hasNext()){
-            user = (User) iterator.next();
-            break;
+        Collection<User> userCollection = Neo4jSessionFactory.getInstance().getNeo4jSession().loadAll(User.class, new Filter("username", username));
+        if(userCollection !=null){
+            Iterator iterator = userCollection.iterator();
+            while(iterator.hasNext()){
+                user = (User) iterator.next();
+                break;
+            }
         }
         return user;
     }
