@@ -24,8 +24,8 @@ public class ProjectController {
         ProjectServiceImpl projectService = new ProjectServiceImpl();
         return projectService.find(uuid);
     }
-    @RequestMapping(value = "/projects/{name}",method = RequestMethod.GET)
-    public Project getProjectByName(@PathVariable String projectName) {
+    @RequestMapping(value = "/projects/name",method = RequestMethod.GET)
+    public Project getProjectByName(@RequestParam(value="project") String projectName) {
         ProjectService projectService = new ProjectServiceImpl();
         return projectService.findProjectByProjectName(projectName);
     }
@@ -36,16 +36,16 @@ public class ProjectController {
         User user = userService.findUserByUsername(username);
         return userService.findAllProjectsOfUser(user.getId());
     }
-    @RequestMapping(value = "/projects/{uuid}/issues",method = RequestMethod.GET)
-    public Set<Issue> getProjectIssuesByID(@PathVariable Long uuid) {
+    @RequestMapping(value = "/projects/issues",method = RequestMethod.GET)
+    public Set<Issue> getProjectIssuesByID(@RequestParam(value="project") String projectName) {
         ProjectServiceImpl projectService = new ProjectServiceImpl();
-        Project project = projectService.find(uuid);
+        Project project = projectService.findProjectByProjectName(projectName);
         return project.getIssues();
     }
-    @RequestMapping(value = "/projects/{uuid}/members",method = RequestMethod.GET)
-    public Set<ProjectMember> getProjectMembersByProjectId(@PathVariable Long uuid) {
+    @RequestMapping(value = "/projects/members",method = RequestMethod.GET)
+    public Set<ProjectMember> getProjectMembersByProjectId(@RequestParam(value="project") String projectName) {
         ProjectServiceImpl projectService = new ProjectServiceImpl();
-        Project project = projectService.find(uuid);
+        Project project = projectService.findProjectByProjectName(projectName);
         return project.getProjectMembers();
     }
 }

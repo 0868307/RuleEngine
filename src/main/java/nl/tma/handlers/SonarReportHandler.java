@@ -22,25 +22,27 @@ import java.util.Set;
  * Created by Wouter on 5/26/2016.
  */
 public class SonarReportHandler implements ReportProcessor {
-    private static final String ISSUE_LEVEL_MINOR = "MINOR";
-    private static final String ISSUE_LEVEL_MAJOR = "MAJOR";
-    private static final String ISSUE_LEVEL_CRITICAL = "CRITICAL";
-    private static final String ISSUE_STATUS_CLOSED = "CLOSED";
-    private static final String METRICS_KEY_STRING = "key";
-    private static final String METRICS_KEY_VALUE = "val";
-    private static final String METRICS_KEY_LINES_COMMENTED = "comment_lines";
-    private static final String METRICS_KEY_LINES = "ncloc";
-    private static final String METRICS_KEY_DUPLICATION_LINES = "duplicated_lines";
-    private static final String METRICS_KEY_DUPLICATION_BLOCKS = "duplicated_blocks";
-    private static final String METRICS_KEY_DUPLICATION_FILES = "duplicated_files";
-    private static final String METRICS_KEY_DEBT = "sqale_index";
-    private static final String REPORT_KEY_USER = "user";
-    private static final String REPORT_KEY_USER_NAME = "naam";
-    private static final String REPORT_KEY_USER_PROJECT = "project";
-    private static final String REPORT_KEY_REPORT = "report";
-    private static final String REPORT_KEY_REPORT_ISSUES = "issues";
-    private static final String REPORT_KEY_METRICS = "metrics";
-    private static final String REPORT_KEY_METRICS_VALUES = "msr";
+    public static final String ISSUE_LEVEL_MINOR = "MINOR";
+    public static final String ISSUE_LEVEL_MAJOR = "MAJOR";
+    public static final String ISSUE_LEVEL_CRITICAL = "CRITICAL";
+    public static final String ISSUE_STATUS_CLOSED = "CLOSED";
+    public static final String METRICS_KEY_STRING = "key";
+    public static final String METRICS_KEY_VALUE = "val";
+    public static final String METRICS_KEY_LINES_COMMENTED = "comment_lines";
+    public static final String METRICS_KEY_LINES = "ncloc";
+    public static final String METRICS_KEY_DUPLICATION_LINES = "duplicated_lines";
+    public static final String METRICS_KEY_DUPLICATION_BLOCKS = "duplicated_blocks";
+    public static final String METRICS_KEY_DUPLICATION_FILES = "duplicated_files";
+    public static final String METRICS_KEY_COMPLEXITY = "sqale_index";
+    public static final String METRICS_KEY_DEBT = "complexity";
+    public static final String REPORT_KEY_USER = "user";
+    public static final String REPORT_KEY_USER_NAME = "naam";
+    public static final String REPORT_KEY_USER_PROJECT = "project";
+    public static final String REPORT_KEY_REPORT = "report";
+    public static final String REPORT_KEY_REPORT_ISSUES = "issues";
+    public static final String REPORT_KEY_METRICS = "metrics";
+    public static final String REPORT_KEY_METRICS_VALUES = "msr";
+    public static final String NEW_LINE_PERCENTAGE = "newlinepercentage";
 
     public SonarReportHandler() {
     }
@@ -139,6 +141,10 @@ public class SonarReportHandler implements ReportProcessor {
                     metricsAsMap.put(key,debtCreated);
                     user.setDebtCreated(user.getDebtCreated() + debtCreated);
                     break;
+                case METRICS_KEY_COMPLEXITY:
+                    double complexityCreated = Double.parseDouble(value) - project.getComplexity();
+                    project.setComplexity(Double.parseDouble(value));
+                    metricsAsMap.put(key, complexityCreated);
                 default:
                     break;
             }

@@ -46,14 +46,6 @@ public class ProjectMember {
         this.user = user;
     }
 
-    public Project getProject() {
-        return project;
-    }
-
-    public void setProject(Project project) {
-        this.project = project;
-    }
-
     public long getPoints() {
         return points;
     }

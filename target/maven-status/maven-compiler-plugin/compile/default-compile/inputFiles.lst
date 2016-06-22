@@ -1,6 +1,7 @@
 C:\Users\Wouter\Documents\GitHub\RuleEngine\RuleEngine\src\main\java\nl\tma\entities\relationships\ProjectMember.java
 C:\Users\Wouter\Documents\GitHub\RuleEngine\RuleEngine\src\main\java\nl\tma\services\Service.java
 C:\Users\Wouter\Documents\GitHub\RuleEngine\RuleEngine\src\main\java\nl\tma\security\SecurityFilter.java
+C:\Users\Wouter\Documents\GitHub\RuleEngine\RuleEngine\src\main\java\nl\tma\handlers\QualityMetricHandler.java
 C:\Users\Wouter\Documents\GitHub\RuleEngine\RuleEngine\src\main\java\nl\tma\services\interfaces\UserService.java
 C:\Users\Wouter\Documents\GitHub\RuleEngine\RuleEngine\src\main\java\nl\tma\handlers\ReportProcessor.java
 C:\Users\Wouter\Documents\GitHub\RuleEngine\RuleEngine\src\main\java\nl\tma\controllers\ProjectController.java

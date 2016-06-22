@@ -25,7 +25,7 @@ public class User extends Entity {
     private int designFailures;
     private int logicFailures;
     private int securityFailures;
-    private double codeCoverage;
+    private double complexity;
 
 
     @Relationship(type = "ACHIEVEMENT_OF")
@@ -157,12 +157,12 @@ public class User extends Entity {
         this.logicFailures = logicFailures;
     }
 
-    public double getCodeCoverage() {
-        return codeCoverage;
+    public double getComplexity() {
+        return complexity;
     }
 
-    public void setCodeCoverage(double codeCoverage) {
-        this.codeCoverage = codeCoverage;
+    public void setComplexity(double complexity) {
+        this.complexity = complexity;
     }
 
     public int getSecurityFailures() {

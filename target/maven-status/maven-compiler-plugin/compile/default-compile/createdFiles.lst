@@ -1,6 +1,7 @@
 nl\tma\entities\Achievement.class
 nl\tma\services\ProjectServiceImpl.class
 nl\tma\services\Service.class
+nl\tma\handlers\QualityMetricHandler.class
 nl\tma\Application.class
 nl\tma\entities\Ranking.class
 nl\tma\entities\Project.class

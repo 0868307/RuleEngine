@@ -14,6 +14,7 @@ import java.util.*;
  * Effective
  * Logic
  * Code Coverage
+ * Security
  *
  */
 public class QualityMetricHandler {
@@ -80,11 +81,11 @@ public class QualityMetricHandler {
         user.setLogicFailures(getRulesCount(LOGIC_RULES, issues));
         user.setSecurityFailures(getRulesCount(SECURITY_RULES, issues));
         user.setEffectiveLines(getEffectiveLines(metrics));
-        user.setCodeCoverage(getUserCodeCoverage(metrics));
+        user.setComplexity(getUserComplexity(metrics));
         userService.save(user);
     }
     private long getEffectiveLines(Map<String,Object> metrics){
-        return (long)metrics.get(SonarReportHandler.convertLinesAndDuplicationsToPoints(metrics));
+        return SonarReportHandler.convertLinesAndDuplicationsToPoints(metrics);
     }
     private int getRulesCount(String[] rulesAsStringArray,Set<Issue> issues){
         int count = 0;
@@ -96,8 +97,8 @@ public class QualityMetricHandler {
         }
         return count;
     }
-    private double getUserCodeCoverage(Map<String,Object> metrics){
-        return 0;
+    private double getUserComplexity(Map<String,Object> metrics){
+        return (double)metrics.get(SonarReportHandler.METRICS_KEY_COMPLEXITY);
     }
     public Map<String,Double> getQuality(long userId){
         Map<String,Double> qualityMap = new HashMap<>();
@@ -110,8 +111,8 @@ public class QualityMetricHandler {
         Double highLogicFailures = null;
         Double lowSecurityFailures = null;
         Double highSecurityFailures = null;
-        Double lowCodeCoverage = null;
-        Double highCodeCoverage = null;
+        Double lowComplexity = null;
+        Double highComplexity = null;
         Double lowEffectiveLines = null;
         Double highEffectiveLines = null;
         for (User user:users){
@@ -139,23 +140,26 @@ public class QualityMetricHandler {
             if(highEffectiveLines == null || highEffectiveLines < user.getEffectiveLines()){
                 highEffectiveLines = (double)user.getEffectiveLines();
             }
-            if(lowCodeCoverage == null || lowCodeCoverage > user.getCodeCoverage()){
-                lowCodeCoverage = user.getCodeCoverage();
+            if(lowComplexity == null || lowComplexity > user.getComplexity()){
+                lowComplexity = user.getComplexity();
             }
-            if(highCodeCoverage == null || highCodeCoverage < user.getCodeCoverage()){
-                highCodeCoverage = user.getCodeCoverage();
+            if(highComplexity == null || highComplexity < user.getComplexity()){
+                highComplexity = user.getComplexity();
             }
         }
         double designScore = normalize(lowDesignFailures,highDesignFailures,me.getDesignFailures(),1,5);
+        designScore = 6 - designScore;
         double logicScore = normalize(lowLogicFailures,highLogicFailures,me.getLogicFailures(),1,5);
+        logicScore = 6 - logicScore;
         double securityScore = normalize(lowSecurityFailures,highSecurityFailures,me.getSecurityFailures(),1,5);
+        securityScore = 6 - securityScore;
         double effectiveLinesScore = normalize(lowEffectiveLines,highEffectiveLines,me.getEffectiveLines(),1,5);
-        double codeCoverageScore = normalize(lowCodeCoverage,highCodeCoverage,me.getCodeCoverage(),1,5);
+        double complexityScore = normalize(lowComplexity,highComplexity,me.getComplexity(),1,5);
         qualityMap.put("design",designScore);
         qualityMap.put("logic",logicScore);
         qualityMap.put("security",securityScore);
         qualityMap.put("effective",effectiveLinesScore);
-        qualityMap.put("codeCoverage",codeCoverageScore);
+        qualityMap.put("complexity",complexityScore);
         return qualityMap;
     }
     private double normalize(double low,double high, double value,double from, double to){

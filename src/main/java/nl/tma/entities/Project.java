@@ -17,7 +17,7 @@ public class Project extends Entity {
     @Relationship(type = "ISSUE_OF")
     Set<Issue> issues;
 
-    @Relationship(type = "PROJECT_MEMBER")
+    @Relationship(type = "PROJECT_MEMBER", direction = "OUTGOING")
     Set<ProjectMember> projectMembers;
 
     private long lines;
@@ -25,6 +25,7 @@ public class Project extends Entity {
     private long duplicationLines;
     private long duplicationBlocks;
     private long duplicationFiles;
+    private double complexity;
     private double debt;
 
 
@@ -115,6 +116,14 @@ public class Project extends Entity {
 
     public void setDebt(double debt) {
         this.debt = debt;
+    }
+
+    public double getComplexity() {
+        return complexity;
+    }
+
+    public void setComplexity(double complexity) {
+        this.complexity = complexity;
     }
 
     public ProjectMember getProjectMember(User user) {
