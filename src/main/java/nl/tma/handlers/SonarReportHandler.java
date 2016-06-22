@@ -61,9 +61,11 @@ public class SonarReportHandler implements ReportProcessor {
         JSONArray jsonIssues = report.getJSONArray(REPORT_KEY_REPORT_ISSUES);
         Set<Issue> issues = convertJsonToIssues(jsonIssues);
         User user = createOrUpdateUser(name);
-        Project project = createOrUpdateProject(projectName,user);
+        Project project = createOrUpdateProject(projectName, user);
+        Map<String,Object> metricsAsMap = calculateNewMetricValues(metrics, project, user);
         Set<Issue> currentIssues = compareIssues(project.getIssues(),issues);
-        metricsToPointsAndSaveToUserAndProject(metrics, currentIssues, project, user);
+        metricsToPointsAndSaveToUserAndProject(metricsAsMap, currentIssues, project, user);
+        new QualityMetricHandler().calculateAndSaveMetrics(metricsAsMap,currentIssues, user.getId());
         new AchievementHandler().handleAchievements(user);
     }
 
@@ -76,10 +78,22 @@ public class SonarReportHandler implements ReportProcessor {
      * @return returns points
      * @throws JSONException
      */
-    private Long metricsToPointsAndSaveToUserAndProject(JSONArray metrics,Set<Issue> issues,Project project,User user) throws JSONException {
+    private Long metricsToPointsAndSaveToUserAndProject(Map<String,Object> metrics,Set<Issue> issues,Project project,User user) throws JSONException {
         UserService userService = new UserServiceImpl();
         ProjectService projectService = new ProjectServiceImpl();
         long points = 0;
+        project.setIssues(issues);
+        points += metricsToPoints(metrics,issues);
+        user.setPoints(user.getPoints() + points);
+        ProjectMember projectMember = project.getProjectMember(user);
+        projectMember.setPoints(projectMember.getPoints() + points);
+        project.updateProjectMember(projectMember);
+        projectService.save(project);
+        userService.save(user);
+        return points;
+    }
+
+    public static Map<String,Object> calculateNewMetricValues(JSONArray metrics, Project project, User user) throws JSONException {
         Map<String,Object> metricsAsMap = new HashMap<>();
         for (int metricIndex = 0; metricIndex < metrics.length(); metricIndex++) {
             JSONObject current = metrics.getJSONObject(metricIndex);
@@ -129,15 +143,7 @@ public class SonarReportHandler implements ReportProcessor {
                     break;
             }
         }
-        project.setIssues(issues);
-        points += metricsToPoints(metricsAsMap,issues);
-        user.setPoints(user.getPoints() + points);
-        ProjectMember projectMember = project.getProjectMember(user);
-        projectMember.setPoints(projectMember.getPoints() + points);
-        project.updateProjectMember(projectMember);
-        projectService.save(project);
-        userService.save(user);
-        return points;
+        return metricsAsMap;
     }
 
     /**
@@ -163,7 +169,7 @@ public class SonarReportHandler implements ReportProcessor {
      * @param metricsAsMap
      * @return points as long
      */
-    private long convertLinesAndDuplicationsToPoints(Map<String, Object> metricsAsMap) {
+    public static long convertLinesAndDuplicationsToPoints(Map<String, Object> metricsAsMap) {
         long points = 0;
         if(metricsAsMap.containsKey(METRICS_KEY_LINES)){
             long lines = (Long)metricsAsMap.get(METRICS_KEY_LINES);

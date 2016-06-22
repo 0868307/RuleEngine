@@ -21,6 +21,11 @@ public class User extends Entity {
     private long duplicationBlocksWritten;
     private long duplicationFilesWritten;
     private double debtCreated;
+    private long effectiveLines;
+    private int designFailures;
+    private int logicFailures;
+    private int securityFailures;
+    private double codeCoverage;
 
 
     @Relationship(type = "ACHIEVEMENT_OF")
@@ -126,5 +131,45 @@ public class User extends Entity {
             this.achievements = new HashSet<>();
         }
         this.achievements.add(achievement);
+    }
+
+    public long getEffectiveLines() {
+        return effectiveLines;
+    }
+
+    public void setEffectiveLines(long effectiveLines) {
+        this.effectiveLines = effectiveLines;
+    }
+
+    public int getDesignFailures() {
+        return designFailures;
+    }
+
+    public void setDesignFailures(int designFailures) {
+        this.designFailures = designFailures;
+    }
+
+    public int getLogicFailures() {
+        return logicFailures;
+    }
+
+    public void setLogicFailures(int logicFailures) {
+        this.logicFailures = logicFailures;
+    }
+
+    public double getCodeCoverage() {
+        return codeCoverage;
+    }
+
+    public void setCodeCoverage(double codeCoverage) {
+        this.codeCoverage = codeCoverage;
+    }
+
+    public int getSecurityFailures() {
+        return securityFailures;
+    }
+
+    public void setSecurityFailures(int securityFailures) {
+        this.securityFailures = securityFailures;
     }
 }

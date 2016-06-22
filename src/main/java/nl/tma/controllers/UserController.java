@@ -2,12 +2,14 @@ package nl.tma.controllers;
 
 import nl.tma.entities.Achievement;
 import nl.tma.entities.User;
+import nl.tma.handlers.QualityMetricHandler;
 import nl.tma.security.AuthToken;
 import nl.tma.security.SecurityFilter;
 import nl.tma.services.UserServiceImpl;
 import nl.tma.services.interfaces.UserService;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Map;
 import java.util.Set;
 
 @RestController
@@ -41,4 +43,12 @@ public class UserController {
         User user = userService.findUserByUsername(username);
         return user.getAchievements();
     }
+    @RequestMapping(value = "/user/quality", method = RequestMethod.GET)
+    public Map<String,Double> getQuality(@RequestHeader(value = SecurityFilter.AUTHORIZATION) String authToken){
+        String username = AuthToken.getUsernameFromToken(authToken);
+        UserService userService = new UserServiceImpl();
+        User user = userService.findUserByUsername(username);
+        return new QualityMetricHandler().getQuality(user.getId());
+    }
+
 }

@@ -8,6 +8,7 @@ import nl.tma.security.AuthToken;
 import nl.tma.security.SecurityFilter;
 import nl.tma.services.ProjectServiceImpl;
 import nl.tma.services.UserServiceImpl;
+import nl.tma.services.interfaces.ProjectService;
 import nl.tma.services.interfaces.UserService;
 import org.springframework.web.bind.annotation.*;
 
@@ -22,6 +23,11 @@ public class ProjectController {
     public Project getProjectById(@PathVariable Long uuid) {
         ProjectServiceImpl projectService = new ProjectServiceImpl();
         return projectService.find(uuid);
+    }
+    @RequestMapping(value = "/projects/{name}",method = RequestMethod.GET)
+    public Project getProjectByName(@PathVariable String projectName) {
+        ProjectService projectService = new ProjectServiceImpl();
+        return projectService.findProjectByProjectName(projectName);
     }
     @RequestMapping(value = "/projects",method = RequestMethod.GET)
     public Set<Project> getProjectsOfUser(@RequestHeader(value = SecurityFilter.AUTHORIZATION) String authToken) {
